@@ -111,7 +111,7 @@ alias ll="ls -la"
 SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh; export SSH_AUTH_SOCK;
 eval $(gpg-agent --daemon 2>/dev/null)
 
-export GOPATH=/Users/martinstendorf/code/go
+export GOPATH=$HOME/code/go
 
 # pyenv setup
 export PYENV_ROOT="$HOME/.pyenv"
