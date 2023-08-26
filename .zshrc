@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ll="ls -la"
 
-SSH_AUTH_SOCK=/Users/martinstendorf/.gnupg/S.gpg-agent.ssh; export SSH_AUTH_SOCK;
+SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh; export SSH_AUTH_SOCK;
 eval $(gpg-agent --daemon 2>/dev/null)
 
 export GOPATH=/Users/martinstendorf/code/go
