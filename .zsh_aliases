@@ -1,0 +1,5 @@
+
+alias lll="ls -lah"
+alias telnet="docker run -it localbox telnet"
+alias vim="nvim"
+alias vi="nvim"
