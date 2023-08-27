@@ -1,5 +1,23 @@
-
+#config management alias
+alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME"
+# shell smoothnes
+alias mkdir="mkdir -p"
 alias lll="ls -lah"
-alias telnet="docker run -it localbox telnet"
+alias h="history"
+
+#alias telnet="docker run -it localbox telnet"
+# neovim management
 alias vim="nvim"
 alias vi="nvim"
+
+# docker management
+alias dockrm='docker rm $(docker ps -a -q)'
+alias dockrmi='docker rmi $(docker images -q)'
+
+# shortify
+alias lgit="lazygit"
+
+# bnaa specifics
+alias ranchlogin='rancher login https://rancher.bnaa.dk --token token-fsmkh:qkprgn7kbfjwbz5jclnqjkhm5lk88g92f4wnlrfnns79v2rx6s6ql5'
+alias kubectl='rancher kubectl'
+
