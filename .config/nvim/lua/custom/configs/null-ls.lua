@@ -1,13 +1,18 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local null_ls = require("null-ls")
 
-
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
 
 local opts = {
+  debug=true,
   sources = {
-    null_ls.builtins.formatting.black,
-    null_ls.builtins.diagnostics.pylint,
-    null_ls.builtins.diagnostics.mypy,
+    formatting.csharpier,
+    formatting.prettier.with({ filetypes = { "html", "markdown", "css", "javascript" }}),
+    -- python
+    formatting.black,
+    diagnostics.pylint,
+    diagnostics.mypy,
   },
   -- auto format on save
   on_attach = function (client, bufnr)

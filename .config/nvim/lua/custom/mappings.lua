@@ -1,7 +1,16 @@
 local M = {}
 
+M.disabled = {
+  -- disable some default NVchad keybind we remapped, does not matter much but makes for a better cheat sheet
+  n = {
+    ["<leader>gt"] = "", -- rebound to <leader>gs
+    ["<leader>cm"] = "", -- rebound to <leader>gc
+  },
+}
+
 M.general = {
   n = {
+    [";"] = { ":", "enter cmdline", opts = { nowait = true } },
     ["J"] = {"mzJ`z", "Join line with cursor in place"},
     ["<leader>y"] = {"\"+y", "Yank to system clipboard"},
     ["<leader>Y"] = {"\"+Y", "Yank line to system clipboard"},
@@ -19,8 +28,17 @@ M.general = {
     ["<C-l>"] = {"<cmd> TmuxNavigateRight<CR>", "window right"},
     ["<C-j>"] = {"<cmd> TmuxNavigateDown<CR>", "window down"},
     ["<C-k>"] = {"<cmd> TmuxNavigateUp<CR>", "window up"},
+    -- overwrite default nvchad find_files so it follows symlinks
+    ["<leader>ff"] = { "<cmd> Telescope find_files follow=true <CR>", "Find files" },
+    ["<leader>fc"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
+
+    -- git
+    ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
+    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
 
 
+    ["gr"] = {"<cmd> Telescope lsp_references<CR>", "lsp references"},
+    ["gd"] = {"<cmd> Telescope lsp_definitions<CR>", "lsp definitions"},
   },
   v = {
     ["J"] = {":m '>+1<CR>gv=gv", "Move selected lines down"},

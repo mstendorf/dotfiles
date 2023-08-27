@@ -1,5 +1,28 @@
 local plugins = {
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "html",
+        "python",
+        "javascript",
+        "bash",
+        "dockerfile",
+        "go",
+        "json",
+        "markdown",
+        "php",
+        "regex",
+        "sql",
+        "scss",
+        "css",
+        "query",
+      }
+    }
+  },
+  {
     "christoomey/vim-tmux-navigator",
     lazy=false,
   },
@@ -27,7 +50,7 @@ local plugins = {
   },
   {
     "mfussenegger/nvim-dap",
-    config = function (_, opts)
+    config = function (_, _)
       require("core.utils").load_mappings("dap")
     end
   },
@@ -38,7 +61,7 @@ local plugins = {
       "mfussenegger/nvim-dap",
       "rcarriga/nvim-dap-ui",
     },
-    config = function (_, opts)
+    config = function (_, _)
       local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").setup(path)
       require("core.utils").load_mappings("dap_python")
@@ -46,7 +69,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = { "python" },
+    ft = { "python", "javascript", "html", "css", "cs" },
     opts = function ()
       return require "custom.configs.null-ls"
     end
@@ -55,12 +78,16 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "csharpier",
+        "prettier",
+        "shellcheck",
         "black",
         "debugpy",
         "mypy",
         "pylint",
-        "pyright",
-
+        "pyright", -- python LSP
+        "typescript-language-server", -- JS LSP
+        "omnisharp", -- c# LSP
       },
     },
   },
