@@ -12,6 +12,10 @@ local plugins = {
     opts = require('custom.configs.treesitter').opts
   },
   {
+    "nvim-telescope/telescope.nvim",
+    opts = require('custom.configs.telescope').opts
+  },
+  {
     "christoomey/vim-tmux-navigator",
     lazy=false,
   },
