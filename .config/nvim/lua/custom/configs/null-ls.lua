@@ -4,8 +4,11 @@ local null_ls = require("null-ls")
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
+local ft = { "python", "javascript", "html", "css", "cs" }
+
 local opts = {
   debug=true,
+  ft = { "python", "javascript", "html", "css", "cs" },
   sources = {
     formatting.csharpier,
     formatting.prettier.with({ filetypes = { "html", "markdown", "css", "javascript" }}),
@@ -31,4 +34,4 @@ local opts = {
     end
   end
 }
-return opts
+

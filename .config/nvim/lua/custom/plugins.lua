@@ -7,27 +7,9 @@ local plugins = {
     lazy=false,
   },
   {
+    -- overwrite ensure_installed to customize for our languages.
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "html",
-        "python",
-        "javascript",
-        "bash",
-        "dockerfile",
-        "go",
-        "json",
-        "markdown",
-        "php",
-        "regex",
-        "sql",
-        "scss",
-        "css",
-        "query",
-      }
-    }
+    opts = require('custom.configs.treesitter').opts
   },
   {
     "christoomey/vim-tmux-navigator",
@@ -41,18 +23,7 @@ local plugins = {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
     config = function ()
-      local dap = require("dap")
-      local dapui = require("dapui")
-      dapui.setup()
-      dap.listeners.after.event_initialized["dapui_config"] = function ()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function ()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function ()
-        dapui.close()
-      end
+      require("custom.configs.nvim-dap-ui")
     end
   },
   {
@@ -83,20 +54,7 @@ local plugins = {
   },
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "csharpier",
-        "prettier",
-        "shellcheck",
-        "black",
-        "debugpy",
-        "mypy",
-        "pylint",
-        "pyright", -- python LSP
-        "typescript-language-server", -- JS LSP
-        "omnisharp", -- c# LSP
-      },
-    },
+    opts = require('custom.configs.mason').opts
   },
   {
     "neovim/nvim-lspconfig",

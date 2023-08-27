@@ -1,5 +1,6 @@
 local M = {}
 
+-- test comment
 M.disabled = {
   -- disable some default NVchad keybind we remapped, does not matter much but makes for a better cheat sheet
   n = {
