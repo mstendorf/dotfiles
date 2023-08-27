@@ -106,7 +106,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ll="ls -la"
 
 SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh; export SSH_AUTH_SOCK;
 eval $(gpg-agent --daemon 2>/dev/null)
@@ -126,6 +125,10 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+
+# make C-k work like normal inside tmux also
+bindkey ^K kill-line
+
 
 source ~/.zsh_aliases
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

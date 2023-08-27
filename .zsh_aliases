@@ -3,6 +3,7 @@ alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME"
 # shell smoothnes
 alias mkdir="mkdir -p"
 alias lll="ls -lah"
+alias ll="ls -la"
 alias h="history"
 
 #alias telnet="docker run -it localbox telnet"
