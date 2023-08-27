@@ -1,5 +1,12 @@
 local plugins = {
   {
+    "kdheepak/lazygit.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim"
+    },
+    lazy=false,
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {

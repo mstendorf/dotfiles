@@ -33,8 +33,9 @@ M.general = {
     ["<leader>fc"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
 
     -- git
-    ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
-    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
+    --["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
+    --["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
+    ["<leader>gs"] = { "<cmd> LazyGit<CR>", "Git status!" },
 
 
     ["gr"] = {"<cmd> Telescope lsp_references<CR>", "lsp references"},
