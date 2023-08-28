@@ -5,6 +5,7 @@ local on_attach = config.on_attach
 local capabilities = config.capabilities
 
 local lspconfig = require("lspconfig")
+local util = require 'lspconfig/util'
 
 lspconfig.omnisharp.setup({
   Jon_attach=on_attach,
@@ -44,6 +45,12 @@ lspconfig.omnisharp.setup({
 lspconfig.pyright.setup({
   on_attach=on_attach,
   capabilities=capabilities,
+  root_dir= function (fname)
+    local root_files = {
+      'pyrightconfig.json'
+    }
+    return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
+  end,
   filetypes={"python"}
 })
 

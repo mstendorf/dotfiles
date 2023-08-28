@@ -12,8 +12,8 @@ local opts = {
     formatting.prettier.with({ filetypes = { "html", "markdown", "css", "javascript" }}),
     -- python
     formatting.black,
+    formatting.isort,
     diagnostics.pylint,
-    diagnostics.mypy,
   },
   -- auto format on save
   on_attach = function (client, bufnr)

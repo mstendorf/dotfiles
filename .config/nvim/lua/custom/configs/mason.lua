@@ -5,9 +5,10 @@ M.opts = {
     "csharpier",
     "prettier",
     "shellcheck",
+    "lua-language-server",
     "black",
     "debugpy",
-    "mypy",
+    -- "mypy",
     "pylint",
     "pyright", -- python LSP
     "typescript-language-server", -- JS LSP
