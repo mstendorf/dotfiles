@@ -1,5 +1,6 @@
 local M = {}
 
+
 M.opts = {
   defaults = {
     prompt_prefix = " "

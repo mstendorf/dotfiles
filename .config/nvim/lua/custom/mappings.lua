@@ -11,7 +11,7 @@ M.disabled = {
 
 M.general = {
   n = {
-    [";"] = { ":", "enter cmdline", opts = { nowait = true } },
+    -- [";"] = { ":", "enter cmdline", opts = { nowait = true } },
     ["J"] = {"mzJ`z", "Join line with cursor in place"},
     ["<leader>y"] = {"\"+y", "Yank to system clipboard"},
     ["<leader>Y"] = {"\"+Y", "Yank line to system clipboard"},

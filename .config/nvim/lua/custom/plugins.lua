@@ -1,10 +1,23 @@
 local plugins = {
   {
+    "apzelos/blamer.nvim",
+    ft = {"python"},
+  },
+  {
+    "ggandor/leap.nvim",
+    config = function () require("leap").set_default_keymaps() end,
+    lazy=false
+  },
+  {
     "kdheepak/lazygit.nvim",
     requires = {
       "nvim-lua/plenary.nvim"
     },
     lazy=false,
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = require("custom.configs.nvim-tree").opts
   },
   {
     -- overwrite ensure_installed to customize for our languages.
