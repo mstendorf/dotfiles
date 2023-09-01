@@ -5,9 +5,10 @@ alias mkdir="mkdir -p"
 alias lll="ls -lah"
 alias ll="ls -la"
 alias h="history"
+alias grep="rg"
 
 # dev related
-alias pygrep="grep --include=*.py"
+alias pygrep="rg --type py"
 
 #alias telnet="docker run -it localbox telnet"
 # neovim management
