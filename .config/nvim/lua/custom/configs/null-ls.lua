@@ -9,7 +9,7 @@ local opts = {
   ft = { "python", "javascript", "html", "css", "cs" },
   sources = {
     formatting.csharpier,
-    formatting.prettier.with({ filetypes = { "html", "markdown", "css", "javascript" }}),
+    formatting.prettier.with({ filetypes = { "html", "markdown", "css", "javascript" }, tabWidth = 4}),
     -- python
     formatting.black,
     formatting.isort,

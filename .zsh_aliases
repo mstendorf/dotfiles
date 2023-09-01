@@ -21,4 +21,4 @@ alias lgit="lazygit"
 # bnaa specifics
 alias ranchlogin='rancher login https://rancher.bnaa.dk --token token-fsmkh:qkprgn7kbfjwbz5jclnqjkhm5lk88g92f4wnlrfnns79v2rx6s6ql5'
 alias kubectl='rancher kubectl'
-
+alias adp='docker run --platform linux/arm64 --rm -it --network host -v ${PWD}:/tmp/ansible registry.bnaa.dk/ansible'

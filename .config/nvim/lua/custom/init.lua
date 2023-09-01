@@ -7,6 +7,12 @@ vim.opt.scrolloff = 8 -- always keep at least 8 lines at the bottom
 
 vim.opt.hlsearch = false -- remove highligted words after searching
 
+-- more standardized tabs
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
 -- vim.diagnostic.config({
 --   virtual_text = {
 --     source = true

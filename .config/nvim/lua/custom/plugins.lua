@@ -1,7 +1,10 @@
 local plugins = {
   {
-    "apzelos/blamer.nvim",
-    ft = {"python"},
+        "lewis6991/gitsigns.nvim",
+        config = function ()
+            require("custom.configs.gitsigns")
+        end,
+        lazy=false
   },
   {
     "ggandor/leap.nvim",
