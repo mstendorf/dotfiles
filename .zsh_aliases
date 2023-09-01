@@ -7,7 +7,7 @@ alias ll="ls -la"
 alias h="history"
 
 # dev related
-alias pygrep = "grep --include=*.py"
+alias pygrep="grep --include=*.py"
 
 #alias telnet="docker run -it localbox telnet"
 # neovim management
