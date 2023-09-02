@@ -43,7 +43,7 @@ M.general = {
     ["gd"] = {"<cmd> Telescope lsp_definitions<CR>", "lsp definitions"},
 
     -- fancy tmux integration
-    ["<C-f>"] = {"<cmd>silent !tmux neww tmux-sessionizer<cr>"}
+    ["<C-f>"] = {"<cmd>silent !tmux neww ~/.local/bin/tmux-sessionizer<cr>"}
   },
   v = {
     ["J"] = {":m '>+1<CR>gv=gv", "Move selected lines down"},
