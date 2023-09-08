@@ -4,6 +4,21 @@ local plugins = {
     --
     -- },
     {
+        "aznhe21/actions-preview.nvim",
+        config = function () end,
+        --event = "VeryLazy"
+        lazy=false
+    },
+    {
+        "folke/trouble.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function ()
+            require("trouble").setup({})
+        end
+    },
+    {
         "ThePrimeagen/refactoring.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",

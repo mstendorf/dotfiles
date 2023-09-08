@@ -81,8 +81,40 @@ M.dap_python = {
         ["<leader>dpr"] = { -- "debug python run"
             function ()
                 require("dap-python").test_method()
-            end
+            end, "\"Debug python run\""
         }
     }
+}
+
+M.actions_preview = {
+    n = {
+       ["<leader>ca"] = {
+            function ()
+            require("actions-preview").code_actions()
+       end , "Code actions" },
+    }
+}
+
+-- M.telescope = {
+--     i = {
+--         ["<S-Down>"] = {
+--                 require("telescope.actions").cycle_history_next
+--         },
+--         ["<S-Up>"] = {
+--                 require("telescope.actions").cycle_history_prev
+--         },
+--     }
+-- }
+
+M.trouble = {
+	n = {
+		["<leader>ww"] = {
+			function()
+				require("trouble").open("document_diagnostics")
+			end,
+			"toggle trouble with workspace diagnostics",
+			opts = { silent = true, noremap = true },
+		},
+	},
 }
 return M
