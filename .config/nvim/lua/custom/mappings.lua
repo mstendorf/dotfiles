@@ -49,6 +49,7 @@ M.general = {
         ["<leader>rif"] = { ":Refactor inline_func", "Refactor inline function"},
         ["<leader>rb"] = { ":Refactor extract_block", "Refactor extract block"},
         ["<leader>rbf"] = { ":Refactor extract_block_to_file", "Refactor extract block to file"},
+        ["<leader>db"] = {"<cmd> DBUIToggle<CR>", "Toggle dadbod databse ui"}
     },
     v = {
         ["J"] = {":m '>+1<CR>gv=gv", "Move selected lines down"},
