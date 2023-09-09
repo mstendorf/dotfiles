@@ -5,31 +5,42 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 local opts = {
-  debug=true,
-  ft = { "python", "javascript", "html", "css", "cs" },
-  sources = {
-    formatting.csharpier,
-    formatting.prettier.with({ filetypes = { "html", "markdown", "css", "javascript" }, tabWidth = 4}),
-    -- python
-    formatting.black,
-    formatting.isort,
-    diagnostics.pylint,
-  },
-  -- auto format on save
-  on_attach = function (client, bufnr)
-    if client.supports_method("textDocument/formatting") then
-      vim.api.nvim_clear_autocmds({
-        group = augroup,
-        buffer = bufnr,
-      })
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = augroup,
-        buffer = bufnr,
-        callback = function ()
-          vim.lsp.buf.format({ bufnr = bufnr })
+    debug=true,
+    ft = { "python", "javascript", "html", "css", "cs" },
+    sources = {
+        formatting.csharpier,
+        formatting.prettier.with({ filetypes = { "html", "markdown", "css", "javascript" }, tabWidth = 4}),
+        formatting.goimports,
+        formatting.golines.with({
+            extra_args = {
+                "--max-len=180",
+                "--base-formatter=gofumpt",
+            },
+        }),
+        formatting.djlint.with({ filetype = { "tpl" }}),
+        -- python
+        formatting.black,
+        formatting.isort,
+        diagnostics.pylint,
+        diagnostics.djlint.with({
+            filetypes = { "tpl" }
+        }),
+    },
+    -- auto format on save
+    on_attach = function (client, bufnr)
+        if client.supports_method("textDocument/formatting") then
+            vim.api.nvim_clear_autocmds({
+                group = augroup,
+                buffer = bufnr,
+            })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup,
+                buffer = bufnr,
+                callback = function ()
+                    vim.lsp.buf.format({ bufnr = bufnr })
+                end
+            })
         end
-      })
     end
-  end
 }
 return opts

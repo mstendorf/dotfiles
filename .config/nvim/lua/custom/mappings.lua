@@ -67,6 +67,7 @@ M.general = {
     },
     i = {
         ["<C-c>"] = {"<Esc>", "Remap for vertical edit to handle C-c"},
+        ["<C-a>"] = { "<ESC>^i", "Beginning of line" },
     }
 }
 -- bindings for python debugging

@@ -1,7 +1,7 @@
 local M = {}
 
 M.opts = {
-  ensure_installed = {
+    ensure_installed = {
         "vim",
         "lua",
         "html",
@@ -18,6 +18,12 @@ M.opts = {
         "scss",
         "css",
         "query",
-  }
+    },
+    autotag = {
+        enable = true,
+        enable_close = true,
+        enable_close_on_slash = true,
+        filetypes = {"html"}
+    }
 }
 return M

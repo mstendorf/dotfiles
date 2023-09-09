@@ -1,6 +1,8 @@
- local gitsigns = require("gitsigns")
+ -- local gitsigns = require("gitsigns")
+local M = {}
 
- gitsigns.setup({
-     signcolumn = false,
-     current_line_blame = true,
- })
+ M.opts = {
+     signcolumn = true,
+     current_line_blame = true
+ }
+ return M

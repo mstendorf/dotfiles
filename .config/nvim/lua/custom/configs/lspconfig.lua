@@ -8,7 +8,7 @@ local lspconfig = require("lspconfig")
 local util = require 'lspconfig/util'
 
 lspconfig.omnisharp.setup({
-  Jon_attach=on_attach,
+  on_attach=on_attach,
   capabilities=capabilities,
   --cmd = {"dotnet", os.getenv("HOME") .. "/Users/martinstendorf/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll"},
   cmd = {"dotnet", os.getenv("HOME") .. "/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll"},
@@ -73,3 +73,13 @@ lspconfig.html.setup({
   filetypes = { "html", "css" }
 })
 
+-- lspconfig.gopls.setup({
+--     on_attach=on_attach,
+--     capabilities=capabilities,
+--     filetypes={"go"},
+--     -- settings = {
+--     --     -- gopls = {
+--     --     --     buildFlags = {"-tags=wireinject"}
+--     --     -- }
+--     -- }
+-- })
