@@ -53,10 +53,6 @@ local plugins = {
         end
     },
     {
-        "nvim-treesitter/nvim-treesitter-context",
-        dependencies = { "nvim-treesitter/nvim-treesitter" }
-    },
-    {
         "aznhe21/actions-preview.nvim",
         config = function () end,
         --event = "VeryLazy"
@@ -111,7 +107,8 @@ local plugins = {
         "nvim-treesitter/nvim-treesitter",
         opts = require('custom.configs.treesitter').opts,
         dependencies = {
-            "windwp/nvim-ts-autotag"
+            "windwp/nvim-ts-autotag",
+            "nvim-treesitter/nvim-treesitter-context"
         }
     },
     {
