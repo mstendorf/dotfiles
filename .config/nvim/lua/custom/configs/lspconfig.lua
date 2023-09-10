@@ -76,5 +76,5 @@ lspconfig.html.setup({
 lspconfig.gopls.setup({
     on_attach=on_attach,
     capabilities=capabilities,
-    filetypes={"go", "gomod"},
+    filetypes={"go", "gomod", "gosum", "gohtmltmpl", "gotexttmpl"},
 })

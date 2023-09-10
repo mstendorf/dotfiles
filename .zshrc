@@ -111,9 +111,9 @@ source $ZSH/oh-my-zsh.sh
 SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh; export SSH_AUTH_SOCK;
 eval $(gpg-agent --daemon 2>/dev/null)
 
-export GOPATH=$HOME/code/go
-export GOBIN=$HOME/code/go/bin
-
+export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
+export PATH="$GOBIN:$PATH"
 # pyenv setup
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"

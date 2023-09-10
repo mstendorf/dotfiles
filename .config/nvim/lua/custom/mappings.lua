@@ -120,31 +120,4 @@ M.trouble = {
 		},
 	},
 }
-M.go = {
-
-    n = {
-
-        ["[d"] = {
-            function()
-                vim.diagnostic.goto_prev { float = { border = "rounded" } }
-            end,
-            "Goto prev",
-        },
-
-        ["]d"] = {
-            function()
-                vim.diagnostic.goto_next { float = { border = "rounded" } }
-            end,
-            "Goto next",
-        },
-
-        ["<leader>ra"] = {
-            function()
-                require("nvchad.renamer").open()
-            end,
-            "LSP rename",
-        },
-        -- ["<leader>ra"] = {"<cmd>lua require('go.rename').run()<CR>", { noremap = true, silent = true }},
-    }
-}
 return M
