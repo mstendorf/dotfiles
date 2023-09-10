@@ -49,7 +49,8 @@ M.general = {
         ["<leader>rif"] = { ":Refactor inline_func", "Refactor inline function"},
         ["<leader>rb"] = { ":Refactor extract_block", "Refactor extract block"},
         ["<leader>rbf"] = { ":Refactor extract_block_to_file", "Refactor extract block to file"},
-        ["<leader>db"] = {"<cmd> DBUIToggle<CR>", "Toggle dadbod databse ui"}
+        ["<leader>db"] = {"<cmd> DBUIToggle<CR>", "Toggle dadbod databse ui"},
+        ["<leader>fi"] = {"ggVG=", "Reindent file"}
     },
     v = {
         ["J"] = {":m '>+1<CR>gv=gv", "Move selected lines down"},
@@ -118,5 +119,32 @@ M.trouble = {
 			opts = { silent = true, noremap = true },
 		},
 	},
+}
+M.go = {
+
+    n = {
+
+        ["[d"] = {
+            function()
+                vim.diagnostic.goto_prev { float = { border = "rounded" } }
+            end,
+            "Goto prev",
+        },
+
+        ["]d"] = {
+            function()
+                vim.diagnostic.goto_next { float = { border = "rounded" } }
+            end,
+            "Goto next",
+        },
+
+        ["<leader>ra"] = {
+            function()
+                require("nvchad.renamer").open()
+            end,
+            "LSP rename",
+        },
+        -- ["<leader>ra"] = {"<cmd>lua require('go.rename').run()<CR>", { noremap = true, silent = true }},
+    }
 }
 return M

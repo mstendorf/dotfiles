@@ -73,13 +73,8 @@ lspconfig.html.setup({
   filetypes = { "html", "css" }
 })
 
--- lspconfig.gopls.setup({
---     on_attach=on_attach,
---     capabilities=capabilities,
---     filetypes={"go"},
---     -- settings = {
---     --     -- gopls = {
---     --     --     buildFlags = {"-tags=wireinject"}
---     --     -- }
---     -- }
--- })
+lspconfig.gopls.setup({
+    on_attach=on_attach,
+    capabilities=capabilities,
+    filetypes={"go", "gomod"},
+})

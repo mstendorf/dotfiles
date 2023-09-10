@@ -31,7 +31,15 @@ local plugins = {
             require("nvim-surround").setup({})
         end,
     },
-    -- {
+    {
+		-- Copilot plugin
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("custom.configs.copilot")
+		end,
+	},    -- {
     --     "tpope/vim-dadbod",
     --     lazy=false,
     --     dependencies = {

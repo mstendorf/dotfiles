@@ -11,7 +11,9 @@ vim.opt.hlsearch = false -- remove highligted words after searching
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+-- vim.opt.expandtab = true
+
+vim.opt.swapfile = false -- no swap files
 
 -- vim.diagnostic.config({
 --   virtual_text = {

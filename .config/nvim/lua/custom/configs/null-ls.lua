@@ -9,7 +9,12 @@ local opts = {
     ft = { "python", "javascript", "html", "css", "cs" },
     sources = {
         formatting.csharpier,
-        formatting.prettier.with({ filetypes = { "html", "markdown", "css", "javascript" }, tabWidth = 4}),
+        formatting.prettier.with({
+            filetypes = { "html", "markdown", "css", "javascript" },
+            extra_args = {
+                "--tab-width=4",
+            }
+        }),
         formatting.goimports,
         formatting.golines.with({
             extra_args = {
