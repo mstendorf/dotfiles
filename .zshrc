@@ -111,6 +111,10 @@ source $ZSH/oh-my-zsh.sh
 SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh; export SSH_AUTH_SOCK;
 eval $(gpg-agent --daemon 2>/dev/null)
 
+# add local bin to Path
+export PATH=$HOME/.local/bin:$PATH
+
+# go setup
 export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 export PATH="$GOBIN:$PATH"
@@ -131,7 +135,7 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # make C-k work like normal inside tmux also
 bindkey ^K kill-line
 
-bindkey -s ^f ".local/bin/tmux-sessionizer\n"
+bindkey -s ^f "tmux-sessionizer\n"
 
 
 source ~/.zsh_aliases

@@ -43,7 +43,7 @@ M.general = {
         ["gd"] = {"<cmd> Telescope lsp_definitions<CR>", "lsp definitions"},
 
         -- fancy tmux integration
-        ["<C-f>"] = {"<cmd>silent !tmux neww ~/.local/bin/tmux-sessionizer<cr>"},
+        ["<C-f>"] = {"<cmd>silent !tmux neww tmux-sessionizer<cr>"},
 
         ["<leader>riv"] = { ":Refactor inline_var", "Refactor inline variable"},
         ["<leader>rif"] = { ":Refactor inline_func", "Refactor inline function"},
