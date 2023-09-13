@@ -131,6 +131,8 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # make C-k work like normal inside tmux also
 bindkey ^K kill-line
 
+bindkey -s ^f ".local/bin/tmux-sessionizer\n"
+
 
 source ~/.zsh_aliases
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
