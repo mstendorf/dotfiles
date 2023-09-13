@@ -50,7 +50,19 @@ M.general = {
         ["<leader>rb"] = { ":Refactor extract_block", "Refactor extract block"},
         ["<leader>rbf"] = { ":Refactor extract_block_to_file", "Refactor extract block to file"},
         ["<leader>db"] = {"<cmd> DBUIToggle<CR>", "Toggle dadbod databse ui"},
-        ["<leader>fi"] = {"ggVG=", "Reindent file"}
+        ["<leader>fi"] = {"ggVG=", "Reindent file"},
+
+        ["<leader>fml"] = {function ()
+            require("cellular-automaton").start_animation("make_it_rain")
+        end},
+
+        ["<leader>fu"] = {function ()
+            require("cellular-automaton").start_animation("scramble")
+        end},
+        ["<leader>ffs"] = {function ()
+            require("cellular-automaton").start_animation("game_of_life")
+        end},
+
     },
     v = {
         ["J"] = {":m '>+1<CR>gv=gv", "Move selected lines down"},
