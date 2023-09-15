@@ -1,0 +1,244 @@
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty itself.
+env:
+  # TERM variable
+  #
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: xterm-256color
+window:
+  # Window dimensions (changes require restart)
+  #
+  # Specified in number of columns/lines, not pixels.
+  # If both are `0`, this setting is ignored.
+  # dimensions:
+  #  columns: 0
+  #  lines: 0
+  # Window opacity:
+  opacity: 1
+  # Window position (changes require restart)
+  #
+  # Specified in number of pixels.
+  # If the position is not set, the window manager will handle the placement.
+  # position:
+  #  x: 0
+  #  y: 0
+
+ 
+
+  # macOS fix for alt-key working - https://github.com/zellij-org/zellij/issues/2051#issuecomment-1461519892
+  #option_as_alt: Both
+
+ 
+
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #     - buttonless: Title bar, transparent background and title bar buttons
+  #     - transparent: Title bar, transparent background, but no title bar buttons
+  decorations: buttonless
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 1
+    y: 1
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+# import:
+#   - ~/.config/alacritty/themes/themes/afterglow.yaml
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    # Font family
+    #
+    # Default:
+    #   - (macOS) Menlo
+    #   - (Linux/BSD) monospace
+    #   - (Windows) Consolas
+    # family: SauceCodePro Nerd Font
+    # family: CodeNewRoman Nerd Font
+    # family: RobotoMono Nerd Font
+    # family: Hack
+    # family: JetBrains Mono
+    # family: UbuntuMono Nerd Font
+    # family: Monofur Nerd Font
+    # family: TerminessTTF Nerd Font
+    # family: Mononoki Nerd Font
+    # family: JetBrainsMono NF
+    family: Hack Nerd Font
+    # The `style` can be specified to pick a specific face.
+    style: Regular
+  # Bold font face
+  # bold:
+  # Font family
+  #
+  # If the bold family is not specified, it will fall back to the
+  # value specified for the normal font.
+  # family: SauceCodePro Nerd Font
+  # family: CodeNewRoman Nerd Font
+  # family: RobotoMono Nerd Font
+  # family: Hack
+  # family: JetBrains Mono
+  # family: UbuntuMono Nerd Font
+  # family: Monofur Nerd Font
+  # family: TerminessTTF Nerd Font
+  # family: Mononoki Nerd Font
+
+ 
+
+  # The `style` can be specified to pick a specific face.
+  # style: Bold
+
+ 
+
+  # Italic font face
+  # italic:
+  # Font family
+  #
+  # If the italic family is not specified, it will fall back to the
+  # value specified for the normal font.
+  # family: SauceCodePro Nerd Font Mono
+  # family: CodeNewRoman Nerd Font
+  # family: RobotoMono Nerd Font
+  # family: Hack
+  # family: JetBrains Mono
+  # family: UbuntuMono Nerd Font
+  # family: Monofuritalic Nerd Font Mono
+  # family: TerminessTTF Nerd Font
+  # family: Mononoki Nerd Font
+
+ 
+
+  # The `style` can be specified to pick a specific face.
+  # style: Italic
+
+ 
+
+  # Bold italic font face
+  # bold_italic:
+  # Font family
+  #
+  # If the bold italic family is not specified, it will fall back to the
+  # value specified for the normal font.
+  # family: SauceCodePro Nerd Font Mono
+  # family: CodeNewRoman Nerd Font
+  # family: RobotoMono Nerd Font
+  # family: Hack
+  # family: JetBrains Mono
+  # family: UbuntuMono Nerd Font
+  # family: Monofuritalic Nerd Font Mono
+  # family: TerminessTTF Nerd Font
+  # family: Mononoki Nerd Font
+
+ 
+
+  # The `style` can be specified to pick a specific face.
+  # style: Bold Italic
+
+ 
+
+  # Point size
+  size: 18.0
+  # Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  offset:
+    x: 1
+    y: 1
+# Visual Bell
+#
+# Any time the BEL code is received, Alacritty "rings" the visual bell. Once
+# rung, the terminal background will be set to white and transition back to the
+# default background color. You can control the rate of this transition by
+# setting the `duration` property (represented in milliseconds). You can also
+# configure the transition function by setting the `animation` property.
+#
+# Values for `animation`:
+#   - Ease
+#   - EaseOut
+#   - EaseOutSine
+#   - EaseOutQuad
+#   - EaseOutCubic
+#   - EaseOutQuart
+#   - EaseOutQuint
+#   - EaseOutExpo
+#   - EaseOutCirc
+#   - Linear
+#
+# Specifying a `duration` of `0` will disable the visual bell.
+visual_bell:
+  animation: EaseOutExpo
+  duration: 0
+colors:
+  # Default colors
+  primary:
+    background: '0x1e2127'
+    foreground: '0xabb2bf'
+    # Bright and dim foreground colors
+    #
+    # The dimmed foreground color is calculated automatically if it is not present.
+    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+    # is `false`, the normal foreground color will be used.
+    # dim_foreground: '0x9a9a9a'
+    bright_foreground: '0xe6efff'
+  # Cursor colors
+  #
+  # Colors which should be used to draw the terminal cursor. If these are unset,
+  # the cursor color will be the inverse of the cell color.
+  # cursor:
+  #  text: '0x000000'
+  #  cursor: '0xffffff'
+
+ 
+
+  # Normal colors
+  normal:
+    black: '0x1e2127'
+    red: '0xe06c75'
+    green: '0x98c379'
+    yellow: '0xd19a66'
+    blue: '0x61afef'
+    magenta: '0xc678dd'
+    cyan: '0x56b6c2'
+    white: '0x828791'
+  # Bright colors
+  bright:
+    black: '0x5c6370'
+    red: '0xe06c75'
+    green: '0x98c379'
+    yellow: '0xd19a66'
+    blue: '0x61afef'
+    magenta: '0xc678dd'
+    cyan: '0x56b6c2'
+    white: '0xe6efff'
+  # Dim colors
+  #
+  # If the dim colors are not set, they will be calculated automatically based
+  # on the `normal` colors.
+  dim:
+    black: '0x1e2127'
+    red: '0xe06c75'
+    green: '0x98c379'
+    yellow: '0xd19a66'
+    blue: '0x61afef'
+    magenta: '0xc678dd'
+    cyan: '0x56b6c2'
+    white: '0x828791'
+
+ 
+
+# Indexed Colors
+#
+# The indexed colors include all colors from 16 to 256.
+# When these are not set, they're filled with sensible defaults.
+# indexed_colors:
+#  - { index: 16, color: '0x000000' }
