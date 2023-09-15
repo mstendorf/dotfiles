@@ -197,3 +197,5 @@ theme: Catppuccin
 # When these are not set, they're filled with sensible defaults.
 # indexed_colors:
 #  - { index: 16, color: '0x000000' }
+key_bindings:
+  - { key: Key6,     mods: Control, chars: "\x1e"}
