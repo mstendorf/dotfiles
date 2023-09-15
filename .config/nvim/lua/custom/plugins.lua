@@ -84,8 +84,7 @@ local plugins = {
     {
         "aznhe21/actions-preview.nvim",
         config = function () end,
-        --event = "VeryLazy"
-        lazy=false
+        event = "VeryLazy"
     },
     {
         "folke/trouble.nvim",
@@ -106,27 +105,24 @@ local plugins = {
             require("refactoring").setup()
         end,
         ft = {"python", "lua", "javascript", "php", "golang", "c", "c++"},
-        lazy=false
+        lazy=true
     },
     {
         "lewis6991/gitsigns.nvim",
-        opts = require("custom.configs.gitsigns").opts
-        -- config = function ()
-        --     require("custom.configs.gitsigns")
-        -- end,
-        -- lazy=false
+        opts = require("custom.configs.gitsigns").opts,
+        lazy=false
     },
     {
         "ggandor/leap.nvim",
         config = function () require("leap").set_default_keymaps() end,
-        lazy=false
+        event="VeryLazy"
     },
     {
         "kdheepak/lazygit.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim"
         },
-        lazy=false,
+        event="VeryLazy"
     },
     {
         "nvim-tree/nvim-tree.lua",
@@ -146,11 +142,12 @@ local plugins = {
     },
     {
         "christoomey/vim-tmux-navigator",
-        lazy=false,
+        event="VeryLazy"
+        -- lazy=false,
     },
     {
         "mbbill/undotree",
-        lazy = false
+        event="VeryLazy"
     },
     {
         "rcarriga/nvim-dap-ui",

@@ -5,6 +5,9 @@ M.ui = {
     cmp = {
         style = "atom"
     },
+    tabufline = {
+        enabled = false,
+    },
     statusline = {
         theme = "minimal",
         separator_style = "block",
