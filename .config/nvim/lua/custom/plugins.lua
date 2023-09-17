@@ -112,11 +112,11 @@ local plugins = {
         opts = require("custom.configs.gitsigns").opts,
         lazy=false
     },
-    {
-        "ggandor/leap.nvim",
-        config = function () require("leap").set_default_keymaps() end,
-        event="VeryLazy"
-    },
+    -- {
+    --     "ggandor/leap.nvim",
+    --     config = function () require("leap").set_default_keymaps() end,
+    --     event="VeryLazy"
+    -- },
     {
         "kdheepak/lazygit.nvim",
         dependencies = {
