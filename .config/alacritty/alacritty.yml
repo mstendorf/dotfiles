@@ -131,6 +131,10 @@ font:
   offset:
     x: 1
     y: 1
+
+
+# when true, bold text is drawn using the bright variant of colors.
+draw_bold_text_with_bright_colors: true
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
@@ -155,6 +159,8 @@ font:
 visual_bell:
   animation: EaseOutExpo
   duration: 0
+
+
 colors:
   # Default colors
   primary:
@@ -200,3 +206,4 @@ theme: Catppuccin
 #  - { index: 16, color: '0x000000' }
 key_bindings:
   - { key: Key6,     mods: Control, chars: "\x1e"}
+  - { key: T, mods: Control|Command, action: SpawnNewInstance}
