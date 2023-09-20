@@ -134,12 +134,20 @@ local plugins = {
         "nvim-tree/nvim-tree.lua",
         opts = require("custom.configs.nvim-tree").opts
     },
+    -- {
+    --     "nvim-treesitter/nvim-treesitter-textobjects",
+    --     opts = require("custom.configs.treesitter-textobjects").opts,
+    --     config = function ()
+    --         require("nvim-treesitter.configs")
+    --     end
+    -- },
     {
         "nvim-treesitter/nvim-treesitter",
         opts = require('custom.configs.treesitter').opts,
         dependencies = {
             "windwp/nvim-ts-autotag",
-            "nvim-treesitter/nvim-treesitter-context"
+            "nvim-treesitter/nvim-treesitter-context",
+            "nvim-treesitter/nvim-treesitter-textobjects",
         }
     },
     {
