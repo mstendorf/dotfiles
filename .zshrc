@@ -138,7 +138,9 @@ bindkey ^K kill-line
 bindkey -s ^f "tmux-sessionizer\n"
 
 
-set -o vi
+# set -o vi
+bindkey -v
+export KEYTIMEOUT=1
 source ~/.zsh_aliases
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
