@@ -95,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-
+export EDITOR="nvim"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -138,6 +138,7 @@ bindkey ^K kill-line
 bindkey -s ^f "tmux-sessionizer\n"
 
 
+set -o vi
 source ~/.zsh_aliases
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
