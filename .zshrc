@@ -138,6 +138,7 @@ bindkey ^K kill-line
 bindkey -s ^f "tmux-sessionizer\n"
 
 
+source <(kubectl completion zsh)
 # set -o vi
 bindkey -v
 export KEYTIMEOUT=1
