@@ -12,6 +12,8 @@ M.opts = {
         -- "mypy",
         "pylint",
         "pyright", -- python LSP
+        "ruff",
+        "ruff-lsp",
         "typescript-language-server", -- JS LSP
         "omnisharp", -- c# LSP
         "gopls",
