@@ -1,6 +1,7 @@
 ---@type ChadrcConfig 
 local M = {}
 M.ui = {
+    transparency = true,
     theme = 'catppuccin',
     cmp = {
         style = "atom"

@@ -42,29 +42,41 @@ lspconfig.omnisharp.setup({
     analyze_open_documents_only = false,
 })
 
--- lspconfig.pyright.setup({
---     on_attach=on_attach,
---     capabilities=capabilities,
---     root_dir= function (fname)
---         local root_files = {
---             'pyrproject.toml',
---             'Dockerfile',
---             'pyrightconfig.json'
---         }
---         return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
---     end,
---     filetypes={"python"}
--- })
-
-lspconfig.ruff_lsp.setup {
-  on_attach = on_attach,
-  init_options = {
+lspconfig.pyright.setup({
+    on_attach=on_attach,
+    capabilities=capabilities,
+    root_dir= function (fname)
+        local root_files = {
+            'pyrightconfig.json',
+            -- 'pyproject.toml',
+            -- 'Dockerfile',
+        }
+        return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
+    end,
     settings = {
-      -- Any extra CLI arguments for `ruff` go here.
-      args = {},
-    }
-  }
-}
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = "openFilesOnly",
+                typeCheckingMode = "basic",
+            }
+        }
+    },
+    filetypes={"python"}
+})
+
+-- lspconfig.ruff_lsp.setup {
+--   on_attach = on_attach,
+--   init_options = {
+--     settings = {
+--       -- Any extra CLI arguments for `ruff` go here.
+--       args = {
+--                 "--line-length=110",
+--             },
+--     }
+--   }
+-- }
 lspconfig.tsserver.setup({
     on_attach=on_attach,
     capabilities=capabilities,
