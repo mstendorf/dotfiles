@@ -132,10 +132,7 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-# make C-k work like normal inside tmux also
-bindkey ^K kill-line
-
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey ^f "tmux-sessionizer\n"
 
 
 source <(kubectl completion zsh)
