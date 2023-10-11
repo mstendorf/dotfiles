@@ -3,7 +3,7 @@ local plugins = {
         "chrisgrieser/nvim-puppeteer",
         dependencies = "nvim-treesitter/nvim-treesitter",
         ft = { "python", "javascript", "typescript" },
-        event="VeryLazy"
+        event="BufRead"
     },
     {
         "eandrju/cellular-automaton.nvim",
@@ -40,14 +40,15 @@ local plugins = {
     {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
-        event = "VeryLazy",
+        event = "BufRead",
         config = function()
             require("nvim-surround").setup({})
         end,
     },
     {
     "github/copilot.vim",
-    lazy = false,
+    -- lazy = false,
+    event="LspAttach",
     config = function()
       -- Mapping tab is already used by NvChad
       vim.g.copilot_no_tab_map = true;
@@ -57,26 +58,6 @@ local plugins = {
       -- or run <leader>ch to see copilot mapping section
     end
     },
- --    {
-	-- 	-- Copilot plugin
-	-- 	"zbirenbaum/copilot.lua",
-	-- 	cmd = "Copilot",
-	-- 	event = "InsertEnter",
-	-- 	config = function()
-	-- 		require("custom.configs.copilot")
-	-- 	end,
-	-- },    
-    -- {
-    --     "tpope/vim-dadbod",
-    --     lazy=false,
-    --     dependencies = {
-    --         "kristijanhusak/vim-dadbod-ui",
-    --         "kristijanhusak/vim-dadbod-completion",
-    --     },
-    --     config = function ()
-    --         require("custom.configs.dadbod").setup()
-    --     end
-    -- },
     {
         "abecodes/tabout.nvim",
         event = "InsertEnter",
@@ -92,6 +73,15 @@ local plugins = {
     --     config = function () end,
     --     event = "VeryLazy"
     -- },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        opts = require('custom.configs.treesitter').opts,
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter-context",
+            "nvim-treesitter/nvim-treesitter-textobjects",
+            "windwp/nvim-ts-autotag",
+        }
+    },
     {
         "folke/trouble.nvim",
         dependencies = {
@@ -111,18 +101,14 @@ local plugins = {
             require("refactoring").setup()
         end,
         ft = {"python", "lua", "javascript", "php", "golang", "c", "c++"},
-        lazy=true
+        -- lazy=true
     },
     {
         "lewis6991/gitsigns.nvim",
         opts = require("custom.configs.gitsigns").opts,
-        lazy=false
+        -- lazy=false
+        event="BufRead"
     },
-    -- {
-    --     "ggandor/leap.nvim",
-    --     config = function () require("leap").set_default_keymaps() end,
-    --     event="VeryLazy"
-    -- },
     {
         "kdheepak/lazygit.nvim",
         dependencies = {
@@ -142,15 +128,6 @@ local plugins = {
     --     end
     -- },
     {
-        "nvim-treesitter/nvim-treesitter",
-        opts = require('custom.configs.treesitter').opts,
-        dependencies = {
-            "windwp/nvim-ts-autotag",
-            "nvim-treesitter/nvim-treesitter-context",
-            "nvim-treesitter/nvim-treesitter-textobjects",
-        }
-    },
-    {
         "nvim-telescope/telescope.nvim",
         opts = require('custom.configs.telescope').opts
     },
@@ -161,7 +138,7 @@ local plugins = {
     },
     {
         "mbbill/undotree",
-        event="VeryLazy"
+        event="BufRead"
     },
     {
         "rcarriga/nvim-dap-ui",
