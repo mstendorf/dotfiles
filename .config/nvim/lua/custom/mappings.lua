@@ -33,6 +33,7 @@ M.general = {
         ["<leader>ff"] = { "<cmd> Telescope find_files follow=true <CR>", "Find files" },
         ["<leader>fc"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
         ["<leader>fn"] = { "<cmd> Telescope lsp_document_symbols ignore_symbols=variable <CR>", "Find in current buffer" },
+        ["<leader>ft"] = { "<cmd> Telescope help_tags <CR>", "Find in current buffer" },
 
         -- git
         --["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
