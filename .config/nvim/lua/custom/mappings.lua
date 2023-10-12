@@ -35,9 +35,6 @@ M.general = {
         ["<leader>fn"] = { "<cmd> Telescope lsp_document_symbols ignore_symbols=variable <CR>", "Find in current buffer" },
         ["<leader>ft"] = { "<cmd> Telescope help_tags <CR>", "Find in current buffer" },
 
-        -- git
-        --["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
-        --["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
         ["<leader>gs"] = { "<cmd> LazyGit<CR>", "Git status!" },
 
 
