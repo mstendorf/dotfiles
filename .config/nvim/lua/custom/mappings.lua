@@ -61,6 +61,10 @@ M.general = {
         ["<leader>ffs"] = {function ()
             require("cellular-automaton").start_animation("game_of_life")
         end},
+        -- centered search 
+        ["n"] = { "nzz", "Centered jumps in search mode"},
+        ["N"] = { "Nzz", "Centered jumps in search mode"},
+        ["*"] = { "*zz", "Center search term on init"},
 
 
 
