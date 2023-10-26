@@ -6,13 +6,14 @@ local diagnostics = null_ls.builtins.diagnostics
 
 local opts = {
     debug=true,
-    ft = { "python", "javascript", "html", "css", "cs" },
+    ft = { "python", "javascript", "html", "htmldjango", "css", "cs" },
     sources = {
         formatting.csharpier,
         formatting.prettier.with({
-            filetypes = { "html", "markdown", "css", "javascript" },
+            filetypes = { "html", "htmldjango", "markdown", "css", "javascript" },
             extra_args = {
                 "--tab-width=4",
+                "--print-width=110",
             }
         }),
         formatting.goimports,

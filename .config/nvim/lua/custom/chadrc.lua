@@ -2,7 +2,7 @@
 local M = {}
 M.ui = {
     transparency = true,
-    theme = 'catppuccin',
+    theme = 'tokyonight',
     cmp = {
         style = "atom"
     },

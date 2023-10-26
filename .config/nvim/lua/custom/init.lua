@@ -14,7 +14,6 @@ vim.opt.shiftwidth = 4
 -- vim.opt.expandtab = true
 
 vim.opt.swapfile = false -- no swap files
-
 -- vim.diagnostic.config({
 --   virtual_text = {
 --     source = true

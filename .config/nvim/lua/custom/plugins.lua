@@ -170,7 +170,7 @@ local plugins = {
     },
     {
         "jose-elias-alvarez/null-ls.nvim",
-        ft = { "python", "javascript", "html", "css", "cs", "go" },
+        ft = { "python", "javascript", "htmldjango", "html", "css", "cs", "go" },
         opts = function ()
             return require "custom.configs.null-ls"
         end
