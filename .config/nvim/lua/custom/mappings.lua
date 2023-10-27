@@ -65,6 +65,12 @@ M.general = {
         ["n"] = { "nzz", "Centered jumps in search mode"},
         ["N"] = { "Nzz", "Centered jumps in search mode"},
         ["*"] = { "*zz", "Center search term on init"},
+        ["<leader>x"] = {
+          function()
+            require("nvchad.tabufline").close_buffer()
+          end,
+          "Close buffer",
+        },
 
 
 
