@@ -1,5 +1,12 @@
 local plugins = {
     {
+        "Aasim-A/scrollEOF.nvim",
+        config = function ()
+            require("scrollEOF").setup()
+        end,
+        event = "BufRead"
+    },
+    {
         "chrisgrieser/nvim-puppeteer",
         dependencies = "nvim-treesitter/nvim-treesitter",
         ft = { "python", "javascript", "typescript" },
