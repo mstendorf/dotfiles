@@ -2,12 +2,14 @@ local M = {}
 
 M.opts = {
     ensure_installed = {
+        "stylua",
+        "html-lsp",
+        "css-lsp",
         "csharpier",
         "prettier",
         "shellcheck",
         "lua-language-server",
         "black",
-        "html-lsp",
         "debugpy",
         -- "mypy",
         "pylint",

@@ -175,13 +175,13 @@ local plugins = {
             require("core.utils").load_mappings("dap_python")
         end
     },
-    {
-        "jose-elias-alvarez/null-ls.nvim",
-        ft = { "python", "javascript", "htmldjango", "html", "css", "cs", "go" },
-        opts = function ()
-            return require "custom.configs.null-ls"
-        end
-    },
+    -- {
+    --     "jose-elias-alvarez/null-ls.nvim",
+    --     ft = { "python", "javascript", "htmldjango", "html", "css", "cs", "go" },
+    --     opts = function ()
+    --         return require "custom.configs.null-ls"
+    --     end
+    -- },
     {
         "williamboman/mason.nvim",
         opts = require('custom.configs.mason').opts
@@ -192,6 +192,13 @@ local plugins = {
             require "plugins.configs.lspconfig"
             require "custom.configs.lspconfig"
         end,
+    },
+    {
+        "stevearc/conform.nvim",
+        config = function ()
+            require "custom.configs.conform"
+        end,
+        ft = { "python", "javascript", "htmldjango", "html", "css", "cs", "go" },
     }
 }
 
