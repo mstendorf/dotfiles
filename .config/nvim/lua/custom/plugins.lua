@@ -136,6 +136,10 @@ local plugins = {
     -- },
     {
         "nvim-telescope/telescope.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "debugloop/telescope-undo.nvim",
+        },
         opts = require('custom.configs.telescope').opts
     },
     {
@@ -199,6 +203,12 @@ local plugins = {
             require "custom.configs.conform"
         end,
         ft = { "python", "javascript", "htmldjango", "html", "css", "cs", "go" },
+    },
+    {
+        "mfussenegger/nvim-lint",
+        config = function ()
+            require "custom.configs.nvim-lint"
+        end,
     }
 }
 
