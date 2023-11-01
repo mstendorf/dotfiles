@@ -208,3 +208,4 @@ theme: Catppuccin
 key_bindings:
   - { key: Key6,     mods: Control, chars: "\x1e"}
   - { key: T, mods: Control|Command, action: SpawnNewInstance}
+  - { key: K, mods: Command, chars: "\x00\x54"} # open tmux smart session manager
