@@ -20,17 +20,19 @@ vim.opt.swapfile = false -- no swap files
 --   }
 -- })
 
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 
 local function quickfix()
-    vim.lsp.buf.code_action({
-        filter = function(a) return a.isPreferred end,
-        apply = true
-    })
+  vim.lsp.buf.code_action {
+    filter = function(a)
+      return a.isPreferred
+    end,
+    apply = true,
+  }
 end
 
-vim.keymap.set('n', '<leader>qf', quickfix, opts)
-vim.cmd([[
+vim.keymap.set("n", "<leader>qf", quickfix, opts)
+vim.cmd [[
 cnoreabbrev W! w!
 cnoreabbrev W1 w!
 cnoreabbrev w1 w!
@@ -51,9 +53,9 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qa qa
 cnoreabbrev Qall qall
-]])
+]]
 
-vim.api.nvim_create_autocmd({ "InsertLeave", "BufWinEnter" }, {
+vim.api.nvim_create_autocmd({ "LspAttach", "TextChanged" }, {
   callback = function()
     require("lint").try_lint()
   end,

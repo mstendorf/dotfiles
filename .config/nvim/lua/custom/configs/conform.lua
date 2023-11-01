@@ -26,7 +26,7 @@ local options = {
     javascript = { "prettierd" },
     go = { "gofmt", "goimports" },
     tpl = { "djlint" },
-    python = { "black", "isort" },
+    python = { "ruff" },
     html = { "prettier" },
     htmldjango = { "prettier" },
     css = { "prettier" },
@@ -36,7 +36,7 @@ local options = {
     javascriptreact = { "prettier" },
   },
   format_on_save = {
-    timeout_ms = 500,
+    timeout_ms = 1000,
     lsp_fallback = true,
   },
 }
