@@ -52,3 +52,9 @@ cnoreabbrev Q q
 cnoreabbrev Qa qa
 cnoreabbrev Qall qall
 ]])
+
+vim.api.nvim_create_autocmd({ "InsertLeave", "BufWinEnter" }, {
+  callback = function()
+    require("lint").try_lint()
+  end,
+})
