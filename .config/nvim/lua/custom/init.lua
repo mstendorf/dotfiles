@@ -55,7 +55,7 @@ cnoreabbrev Qa qa
 cnoreabbrev Qall qall
 ]]
 
-vim.api.nvim_create_autocmd({ "LspAttach", "TextChanged" }, {
+vim.api.nvim_create_autocmd({ "LspAttach", "TextChanged", "InsertLeave" }, {
   callback = function()
     require("lint").try_lint()
   end,
