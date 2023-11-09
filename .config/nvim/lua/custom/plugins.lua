@@ -11,7 +11,6 @@ local plugins = {
     "chrisgrieser/nvim-puppeteer",
     dependencies = "nvim-treesitter/nvim-treesitter",
     ft = { "python", "javascript", "typescript" },
-    event = "BufRead",
   },
   {
     "eandrju/cellular-automaton.nvim",
