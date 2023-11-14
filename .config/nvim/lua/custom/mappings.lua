@@ -82,6 +82,7 @@ M.general = {
       end,
       "LSP hover",
     },
+    ["-"] = { "<CMD>Oil<CR>", "Open parent directory" },
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv", "Move selected lines down" },
