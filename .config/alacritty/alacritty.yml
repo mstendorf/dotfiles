@@ -199,6 +199,7 @@ colors:
     - { index: 17, color: '0xF5E0DC' }
 theme: Catppuccin
 
+  
 # Indexed Colors
 #
 # The indexed colors include all colors from 16 to 256.

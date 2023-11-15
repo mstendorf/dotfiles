@@ -11,7 +11,6 @@ local plugins = {
     "chrisgrieser/nvim-puppeteer",
     dependencies = "nvim-treesitter/nvim-treesitter",
     ft = { "python", "javascript", "typescript" },
-    event = "BufRead",
   },
   {
     "eandrju/cellular-automaton.nvim",
@@ -241,9 +240,17 @@ local plugins = {
       })
     end,
   },
-    {
-        "tpope/vim-fugitive",
-    }
+  {
+    "tpope/vim-fugitive",
+    event = "BufRead",
+  },
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VeryLazy",
+  },
 }
 
 return plugins
