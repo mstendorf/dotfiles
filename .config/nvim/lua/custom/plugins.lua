@@ -251,6 +251,10 @@ local plugins = {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
   },
+  {
+    "theprimeagen/harpoon",
+    event = "VeryLazy",
+  },
 }
 
 return plugins

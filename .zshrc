@@ -151,3 +151,4 @@ source ~/.zsh_aliases
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
