@@ -1,3 +1,6 @@
+-- sign column to show I've gone to far
+vim.opt.signcolumn = "yes"
+vim.opt.colorcolumn = "80"
 -- always have relative line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
