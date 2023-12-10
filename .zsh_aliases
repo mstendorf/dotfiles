@@ -6,6 +6,7 @@ alias lll="ls -lah"
 alias ll="ls -la"
 alias h="history"
 alias e="nvim"
+alias ta="tmux a"
 # alias grep="rg"
 
 # dev related
