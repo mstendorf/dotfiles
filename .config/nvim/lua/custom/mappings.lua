@@ -86,18 +86,42 @@ M.general = {
     ["-"] = { "<CMD>Oil<CR>", "Open parent directory" },
 
     -- harpoon
-    ["<leader>m"] = { "<CMD>lua require('harpoon.mark').add_file()<CR>", "Add file to harpoon" },
-    ["<leader>h"] = { "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Toggle harpoon menu" },
-    ["<leader>1"] = { "<CMD>lua require('harpoon.ui').nav_file(1)<CR>", "Go to harpoon mark 1" },
-    ["<leader>2"] = { "<CMD>lua require('harpoon.ui').nav_file(2)<CR>", "Go to harpoon mark 2" },
-    ["<leader>3"] = { "<CMD>lua require('harpoon.ui').nav_file(3)<CR>", "Go to harpoon mark 3" },
-    ["<leader>4"] = { "<CMD>lua require('harpoon.ui').nav_file(4)<CR>", "Go to harpoon mark 4" },
-    ["<leader>5"] = { "<CMD>lua require('harpoon.ui').nav_file(5)<CR>", "Go to harpoon mark 5" },
-    ["<leader>6"] = { "<CMD>lua require('harpoon.ui').nav_file(6)<CR>", "Go to harpoon mark 6" },
-    ["<leader>7"] = { "<CMD>lua require('harpoon.ui').nav_file(7)<CR>", "Go to harpoon mark 7" },
-    ["<leader>8"] = { "<CMD>lua require('harpoon.ui').nav_file(8)<CR>", "Go to harpoon mark 8" },
-    ["<leader>9"] = { "<CMD>lua require('harpoon.ui').nav_file(9)<CR>", "Go to harpoon mark 9" },
-    ["<leader>0"] = { "<CMD>lua require('harpoon.ui').nav_file(10)<CR>", "Go to harpoon mark 10" },
+    ["<leader>m"] = {
+      function()
+        require("harpoon"):list():append()
+      end,
+      "Add file to harpoon",
+    },
+    ["<leader>h"] = {
+      function()
+        require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
+      end,
+      "Toggle harpoon menu",
+    },
+    ["<leader>j"] = {
+      function()
+        require("harpoon"):list():select(1)
+      end,
+      "Go to harpoon mark 1",
+    },
+    ["<leader>k"] = {
+      function()
+        require("harpoon"):list():select(2)
+      end,
+      "Go to harpoon mark 2",
+    },
+    ["<leader>l"] = {
+      function()
+        require("harpoon"):list():select(3)
+      end,
+      "Go to harpoon mark 3",
+    },
+    ["<leader>;"] = {
+      function()
+        require("harpoon"):list():select(4)
+      end,
+      "Go to harpoon mark 4",
+    },
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv", "Move selected lines down" },

@@ -253,7 +253,11 @@ local plugins = {
   },
   {
     "theprimeagen/harpoon",
+    branch = "harpoon2",
     event = "VeryLazy",
+    confi = function()
+      require("harpoon").setup()
+    end,
   },
 }
 
