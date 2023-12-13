@@ -241,6 +241,10 @@ local plugins = {
     end,
   },
   {
+    "tpope/vim-fugitive",
+    event = "BufRead",
+  },
+  {
     "stevearc/oil.nvim",
     opts = {},
     -- Optional dependencies

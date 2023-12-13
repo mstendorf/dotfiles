@@ -34,6 +34,7 @@ local options = {
     typescript = { "prettier" },
     typescriptreact = { "prettier" },
     javascriptreact = { "prettier" },
+    yaml = { "prettier" },
   },
   format_on_save = {
     timeout_ms = 1000,

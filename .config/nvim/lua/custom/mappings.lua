@@ -36,6 +36,7 @@ M.general = {
     ["<leader>ft"] = { "<cmd> Telescope help_tags <CR>", "Find in current buffer" },
 
     ["<leader>gs"] = { "<cmd> LazyGit<CR>", "Git status!" },
+    ["<leader>gh"] = { "<cmd> Gclog<CR>", "Git file history!" },
 
     ["gr"] = { "<cmd> Telescope lsp_references<CR>", "lsp references" },
     ["gd"] = { "<cmd> Telescope lsp_definitions<CR>", "lsp definitions" },
