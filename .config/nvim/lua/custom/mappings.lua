@@ -29,11 +29,12 @@ M.general = {
     ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
-    -- overwrite default nvchad find_files so it follows symlinks
+    -- telescope bindings
+    ["<leader>t"] = { "<cmd> Telescope builtin <CR>", "List telescope functions as fuzzy search" },
     ["<leader>ff"] = { "<cmd> Telescope find_files follow=true <CR>", "Find files" },
-    ["<leader>fc"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
+    ["<leader>fc"] = { "<cmd> Telescope commands <CR>", "Find in current buffer" },
     ["<leader>fn"] = { "<cmd> Telescope lsp_document_symbols ignore_symbols=variable <CR>", "Find in current buffer" },
-    ["<leader>ft"] = { "<cmd> Telescope help_tags <CR>", "Find in current buffer" },
+    ["<leader>ft"] = { "<cmd> Telescope help_tags <CR>", "List help tags of nvim" },
 
     ["<leader>gs"] = { "<cmd> LazyGit<CR>", "Git status!" },
     ["<leader>gh"] = { "<cmd> Gclog<CR>", "Git file history!" },
