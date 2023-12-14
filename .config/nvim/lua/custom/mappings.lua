@@ -19,10 +19,8 @@ M.general = {
     ["Q"] = { "<nop>" },
     ["<leader>s"] = { ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<left><left><left>", "Replace word under cursor" },
     ["<leader>ex"] = { "<cmd>!chmod +x %<CR>", "Make current file executeable" },
-    ["<leader>u"] = { "<cmd> Telescope undo <CR>", "Undotreee toggle" },
     ["<C-d>"] = { "<C-d>zz", "Keep cursor centered while scrolling" },
     ["<C-u>"] = { "<C-u>zz", "Keep cursor centered while scrolling" },
-    ["<leader>gf"] = { "<cmd> Telescope git_files <CR>", "Find files tracked by git" },
 
     -- tmux navigation settings overwriting what nvchad overwrote from vim, going full circle here
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
@@ -35,6 +33,8 @@ M.general = {
     ["<leader>fc"] = { "<cmd> Telescope commands <CR>", "Find in current buffer" },
     ["<leader>fn"] = { "<cmd> Telescope lsp_document_symbols ignore_symbols=variable <CR>", "Find in current buffer" },
     ["<leader>ft"] = { "<cmd> Telescope help_tags <CR>", "List help tags of nvim" },
+    ["<leader>u"] = { "<cmd> Telescope undo <CR>", "Undotreee toggle" },
+    ["<leader>gf"] = { "<cmd> Telescope git_files <CR>", "Find files tracked by git" },
 
     ["<leader>gs"] = { "<cmd> LazyGit<CR>", "Git status!" },
     ["<leader>gh"] = { "<cmd> Gclog<CR>", "Git file history!" },
