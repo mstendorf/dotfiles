@@ -37,7 +37,8 @@ M.general = {
     ["<leader>gf"] = { "<cmd> Telescope git_files <CR>", "Find files tracked by git" },
 
     ["<leader>gs"] = { "<cmd> LazyGit<CR>", "Git status!" },
-    ["<leader>gh"] = { "<cmd> Gclog<CR>", "Git file history!" },
+    ["<leader>gh"] = { "<cmd> 0Gclog<CR>", "Git file history!" },
+    ["<leader>gvh"] = { "<cmd> 0Gclog<CR>", "Git file history!" },
 
     ["gr"] = { "<cmd> Telescope lsp_references<CR>", "lsp references" },
     ["gd"] = { "<cmd> Telescope lsp_definitions<CR>", "lsp definitions" },
@@ -129,6 +130,7 @@ M.general = {
     ["K"] = { ":m '<-2<CR>gv=gv", "Move selected lines down" },
     ["<leader>y"] = { '"+y', "Yank to system clipboard" },
     ["<leader>d"] = { '"_d', "Delete line to system clipboard" },
+    ["<leader>gh"] = { ":Gclog<CR>", "Git file history!" },
   },
   x = {
     ["<leader>p"] = { '"_dP', "Paste over highlighted text and preserve clipboard" },
