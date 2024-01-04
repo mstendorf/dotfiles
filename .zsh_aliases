@@ -8,6 +8,7 @@ alias h="history"
 alias e="nvim"
 alias ta="tmux a"
 # alias grep="rg"
+alias cat="bat"
 
 # dev related
 alias pygrep="rg --type py"

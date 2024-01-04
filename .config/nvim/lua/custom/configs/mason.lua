@@ -21,8 +21,10 @@ M.opts = {
     "gopls",
     "gofumpt",
     "djlint",
-    "eslint",
+    "eslint_d",
     "goimports",
+    "rust-analyzer",
+    "rustfmt",
   },
 }
 return M

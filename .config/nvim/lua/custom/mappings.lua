@@ -6,6 +6,7 @@ M.disabled = {
   n = {
     ["<leader>gt"] = "", -- rebound to <leader>gs
     ["<leader>cm"] = "", -- rebound to <leader>gc
+    ["<leader>ls"] = "",
   },
 }
 
@@ -64,7 +65,7 @@ M.general = {
         require("cellular-automaton").start_animation "scramble"
       end,
     },
-    ["<leader>ffs"] = {
+    ["<leader>fuu"] = {
       function()
         require("cellular-automaton").start_animation "game_of_life"
       end,
