@@ -35,6 +35,7 @@ local options = {
     typescriptreact = { "prettier" },
     javascriptreact = { "prettier" },
     yaml = { "prettier" },
+    rust = { "rustfmt" },
   },
   format_on_save = {
     timeout_ms = 1000,

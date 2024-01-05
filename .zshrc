@@ -118,6 +118,8 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 # ~/.config/tmux/plugins
 export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+# rust added to path
+export PATH=$HOME/.cargo/env:$PATH
 
 # go setup
 export GOPATH=$HOME/.go
