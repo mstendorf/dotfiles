@@ -256,7 +256,7 @@ local plugins = {
     "theprimeagen/harpoon",
     branch = "harpoon2",
     event = "VeryLazy",
-    confi = function()
+    config = function()
       require("harpoon").setup()
     end,
   },
@@ -268,14 +268,11 @@ local plugins = {
     end,
   },
   {
-    "simrat39/rust-tools.nvim",
+    "mrcjkb/rustaceanvim",
     ft = "rust",
-    dependencies = "neovim/nvim-lspconfig",
-    opts = function()
-      return require "custom.configs.rust-tools"
-    end,
+    opts = function() end,
     config = function(_, opts)
-      require("rust-tools").setup(opts)
+      require "custom.configs.rust-tools"
     end,
   },
   {
