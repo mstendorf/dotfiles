@@ -97,7 +97,11 @@ return {
 
     lspconfig.html.setup {
       on_attach = on_attach,
-      capabilities = capabilities,
+      capabilities = function()
+        local capa = vim.lsp.protocol.make_client_capabilities()
+        capa.textDocument.completion.completionItem.snippetSupport = true
+        return capa
+      end,
       configurationSection = { "html", "css" },
       embeddedLanguages = {
         css = true,
@@ -113,18 +117,48 @@ return {
       filetypes = { "go", "gomod", "gosum", "gohtmltmpl", "gotexttmpl" },
     }
 
-    -- lspconfig.rust_analyzer.setup {
-    --   on_attach = on_attach,
-    --   capabilities = capabilities,
-    --   filetypes = { "rust" },
-    --   root_dir = util.root_pattern "Cargo.toml",
-    --   settings = {
-    --     ["rust-analyzer"] = {
-    --       cargo = {
-    --         allFeatures = true,
-    --       },
-    --     },
-    --   },
-    -- }
+    lspconfig.rust_analyzer.setup {
+      on_attach = function(client, bufnr)
+        -- require("lsp_signature").on_attach()
+        require("lsp-inlayhints").on_attach(client, bufnr)
+        on_attach(client, bufnr)
+      end,
+      capabilities = capabilities,
+      filetypes = { "rust" },
+      -- root_dir = function(fname)
+      --   local root_files = {
+      --     "cargo.toml",
+      --   }
+      --   return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
+      -- end,
+      settings = {
+        -- rust-analyzer language server configuration
+        ["rust-analyzer"] = {
+          assist = {
+            importEnforceGranularity = true,
+            -- importPrefix = "create"
+          },
+          cargo = { allFeatures = true },
+          checkOnSave = {
+            -- default: `cargo check`
+            command = "clippy",
+            allFeatures = true,
+          },
+          inlayHints = {
+            lifetimeElisionHints = {
+              enable = true,
+              useParameterNames = true,
+            },
+          },
+        },
+      },
+      -- settings = {
+      --   ["rust-analyzer"] = {
+      --     cargo = {
+      --       allFeatures = true,
+      --     },
+      --   },
+      -- },
+    }
   end,
 }

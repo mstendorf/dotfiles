@@ -36,7 +36,7 @@ M.general = {
     ["<leader>fn"] = { "<cmd> Telescope lsp_document_symbols ignore_symbols=variable <CR>", "Find in current buffer" },
     ["<leader>ft"] = { "<cmd> Telescope help_tags <CR>", "List help tags of nvim" },
     -- ["<leader>u"] = { "<cmd> Telescope undo <CR>", "Undotreee toggle" },
-    ["<leader>u"] = { "<cmd> UndotreeeToggle<CR>", "Undotreee toggle" },
+    ["<leader>u"] = { "<cmd> UndotreeToggle<CR>", "Undotreee toggle" },
     ["<leader>gf"] = { "<cmd> Telescope git_files <CR>", "Find files tracked by git" },
 
     ["<leader>gs"] = { "<cmd> LazyGit<CR>", "Git status!" },
@@ -175,16 +175,16 @@ M.dap_python = {
 --     }
 -- }
 
--- M.telescope = {
---     i = {
---         ["<S-Down>"] = {
---                 require("telescope.actions").cycle_history_next
---         },
---         ["<S-Up>"] = {
---                 require("telescope.actions").cycle_history_prev
---         },
---     }
--- }
+--M.telescope = {
+--  i = {
+--    ["<S-Down>"] = {
+--      require("telescope.actions").cycle_history_next,
+--    },
+--    ["<S-Up>"] = {
+--      require("telescope.actions").cycle_history_prev,
+--    },
+--  },
+--}
 
 M.trouble = {
   n = {
