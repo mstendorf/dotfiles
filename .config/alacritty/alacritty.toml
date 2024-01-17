@@ -1,0 +1,86 @@
+
+[[colors.indexed_colors]]
+color = "0xF8BD96"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xF5E0DC"
+index = 17
+
+[colors.bright]
+black = "0x988BA2"
+blue = "0x96CDFB"
+cyan = "0x89DCEB"
+green = "0xABE9B3"
+magenta = "0xF5C2E7"
+red = "0xF28FAD"
+white = "0xD9E0EE"
+yellow = "0xFAE3B0"
+
+[colors.cursor]
+cursor = "0xF5E0DC"
+text = "0x1E1D2F"
+
+[colors.normal]
+black = "0x6E6C7E"
+blue = "0x96CDFB"
+cyan = "0x89DCEB"
+green = "0xABE9B3"
+magenta = "0xF5C2E7"
+red = "0xF28FAD"
+white = "0xD9E0EE"
+yellow = "0xFAE3B0"
+
+[colors.primary]
+background = "0x1E1D2F"
+foreground = "0xD9E0EE"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 18.0
+
+[font.normal]
+family = "JetBrainsMono NF"
+style = "Regular"
+
+[font.offset]
+x = 1
+y = 1
+
+[[keyboard.bindings]]
+chars = "\u001E"
+key = "Key6"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "T"
+mods = "Control|Command"
+
+[[keyboard.bindings]]
+chars = "\u0000T"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001B\u007F"
+key = "Back"
+mods = "Alt"
+
+[scrolling]
+history = 100000
+
+# [visual_bell]
+# animation = "EaseOutExpo"
+# duration = 0
+
+[window]
+decorations = "none"
+opacity = 1
+option_as_alt = "Both"
+
+[window.padding]
+x = 3
+y = 3
