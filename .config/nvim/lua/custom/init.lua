@@ -64,15 +64,15 @@ vim.api.nvim_create_autocmd({ "LspAttach", "TextChanged", "InsertLeave" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "LspAttach" }, {
-  desc = "Disable semantic tokens for rustaceanvim as it fucks the colorscheme",
-  group = vim.api.nvim_create_augroup("disable-rustacean-colors", { clear = true }),
-  callback = function(opts)
-    if vim.bo[opts.buf].filetype == "rust" then
-      local client = vim.lsp.get_client_by_id(opts.data.client_id)
-      client.server_capabilities.semanticTokensProvider = nil
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "LspAttach" }, {
+--   desc = "Disable semantic tokens for rustaceanvim as it fucks the colorscheme",
+--   group = vim.api.nvim_create_augroup("disable-rustacean-colors", { clear = true }),
+--   callback = function(opts)
+--     if vim.bo[opts.buf].filetype == "rust" then
+--       local client = vim.lsp.get_client_by_id(opts.data.client_id)
+--       client.server_capabilities.semanticTokensProvider = nil
+--     end
+--   end,
+-- })
 
 vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#444b6a", italic = true })
