@@ -125,12 +125,6 @@ return {
       end,
       capabilities = capabilities,
       filetypes = { "rust" },
-      -- root_dir = function(fname)
-      --   local root_files = {
-      --     "cargo.toml",
-      --   }
-      --   return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
-      -- end,
       settings = {
         -- rust-analyzer language server configuration
         ["rust-analyzer"] = {
@@ -152,13 +146,6 @@ return {
           },
         },
       },
-      -- settings = {
-      --   ["rust-analyzer"] = {
-      --     cargo = {
-      --       allFeatures = true,
-      --     },
-      --   },
-      -- },
     }
   end,
 }
