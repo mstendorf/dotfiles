@@ -41,6 +41,18 @@ TERM = "xterm-256color"
 [font]
 size = 18.0
 
+[font.bold]
+family = "JetBrainsMono NF"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono NF"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono NF"
+style = "Bold Italic"
+
 [font.normal]
 family = "JetBrainsMono NF"
 style = "Regular"
@@ -78,8 +90,9 @@ history = 100000
 
 [window]
 decorations = "none"
-opacity = 1
+opacity = 0.9
 option_as_alt = "Both"
+# startup_mode="Fullscreen"
 
 [window.padding]
 x = 3
