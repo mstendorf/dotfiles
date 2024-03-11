@@ -166,14 +166,16 @@ M.dap_python = {
   },
 }
 
--- M.actions_preview = {
---     n = {
---        ["<leader>ca"] = {
---             function ()
---             require("actions-preview").code_actions()
---        end , "Code actions" },
---     }
--- }
+M.actions_preview = {
+  n = {
+    ["<leader>ca"] = {
+      function()
+        require("actions-preview").code_actions()
+      end,
+      "Code actions",
+    },
+  },
+}
 
 --M.telescope = {
 --  i = {
