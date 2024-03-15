@@ -1,3 +1,4 @@
+require("nvchad.options")
 -- sign column to show I've gone to far
 vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn = "80"
@@ -26,16 +27,16 @@ vim.opt.swapfile = false -- no swap files
 local opts = { noremap = true, silent = true }
 
 local function quickfix()
-  vim.lsp.buf.code_action {
-    filter = function(a)
-      return a.isPreferred
-    end,
-    apply = true,
-  }
+    vim.lsp.buf.code_action({
+        filter = function(a)
+            return a.isPreferred
+        end,
+        apply = true,
+    })
 end
 
 vim.keymap.set("n", "<leader>qf", quickfix, opts)
-vim.cmd [[
+vim.cmd([[
 cnoreabbrev W! w!
 cnoreabbrev W1 w!
 cnoreabbrev w1 w!
@@ -56,12 +57,12 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qa qa
 cnoreabbrev Qall qall
-]]
+]])
 
 vim.api.nvim_create_autocmd({ "LspAttach", "TextChanged", "InsertLeave" }, {
-  callback = function()
-    require("lint").try_lint()
-  end,
+    callback = function()
+        require("lint").try_lint()
+    end,
 })
 
 -- vim.api.nvim_create_autocmd({ "LspAttach" }, {
