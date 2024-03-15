@@ -2,11 +2,20 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
         -- require "plugins.configs.lspconfig"
+        require("nvchad.configs.lspconfig").defaults()
+        -- require("configs.lspconfig")
         local config = require("nvchad.configs.lspconfig")
 
         -- local config = require "plugins.configs.lspconfig"
 
-        local on_attach = config.on_attach
+        local on_attach = function(client, bufnr)
+            config.on_attach(client, bufnr)
+            vim.keymap.set("n", "<leader>ca", function()
+                require("actions-preview").code_actions()
+            end, { desc = "Code actions" })
+        end
+        -- local on_attach = config.on_attach
+        local on_init = config.on_init
         local capabilities = config.capabilities
 
         local lspconfig = require("lspconfig")
@@ -14,6 +23,7 @@ return {
 
         lspconfig.omnisharp.setup({
             on_attach = on_attach,
+            on_init = on_init,
             capabilities = capabilities,
             --cmd = {"dotnet", os.getenv("HOME") .. "/Users/martinstendorf/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll"},
             cmd = { "dotnet", os.getenv("HOME") .. "/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
@@ -49,6 +59,7 @@ return {
 
         lspconfig.pyright.setup({
             on_attach = on_attach,
+            on_init = on_init,
             capabilities = capabilities,
             -- capabilities = (function()
             --   local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -94,12 +105,14 @@ return {
         -- }
         lspconfig.tsserver.setup({
             on_attach = on_attach,
+            on_init = on_init,
             capabilities = capabilities,
             filetypes = { "javascript" },
         })
 
         lspconfig.html.setup({
             on_attach = on_attach,
+            on_init = on_init,
             capabilities = function()
                 local capa = vim.lsp.protocol.make_client_capabilities()
                 capa.textDocument.completion.completionItem.snippetSupport = true
@@ -116,6 +129,7 @@ return {
 
         lspconfig.gopls.setup({
             on_attach = on_attach,
+            on_init = on_init,
             capabilities = capabilities,
             filetypes = { "go", "gomod", "gosum", "gohtmltmpl", "gotexttmpl" },
         })
@@ -126,6 +140,7 @@ return {
                 require("lsp-inlayhints").on_attach(client, bufnr)
                 on_attach(client, bufnr)
             end,
+            on_init = on_init,
             capabilities = capabilities,
             filetypes = { "rust" },
             settings = {

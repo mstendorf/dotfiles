@@ -4,12 +4,25 @@ local nomap = vim.keymap.del
 
 nomap("n", "<leader>gt")
 nomap("n", "<leader>cm")
--- nomap("n", "<leader>ls")
+-- nomap("n", "<leader>ca")
 nomap("n", "<leader>lf")
 
 -- add yours here
 local map = vim.keymap.set
+-- Comment
+-- map({ "n", "v" }, "<leader>/", function()
+-- require("Comment.api").toggle.linewise.current()
+-- end, { desc = "Comment Toggle" })
+map("n", "<leader>/", function()
+    require("Comment.api").toggle.linewise.current()
+end, { desc = "Comment Toggle" })
 
+map(
+    "v",
+    "<leader>/",
+    "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+    { desc = "Comment Toggle" }
+)
 map("n", "<leader>fm", function()
     require("conform").format()
 end, { desc = "File Format with conform" })
@@ -109,6 +122,9 @@ end, { desc = "Debug python run" })
 map("n", "<leader>ww", function()
     require("trouble").toggle("document_diagnostics")
 end, { desc = "toggle trouble with workspace diagnostics", silent = true, noremap = true })
+map("n", "<leader>ca", function()
+    require("actions-preview").code_actions()
+end, { desc = "Code actions" })
 
 -- visual mode bindings
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
