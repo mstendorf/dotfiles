@@ -7,12 +7,14 @@ return {
         local config = require("nvchad.configs.lspconfig")
 
         -- local config = require "plugins.configs.lspconfig"
-
         local on_attach = function(client, bufnr)
+            local function opts(desc)
+                return { buffer = bufnr, desc = desc }
+            end
             config.on_attach(client, bufnr)
             vim.keymap.set("n", "<leader>ca", function()
                 require("actions-preview").code_actions()
-            end, { desc = "Code actions" })
+            end, opts("Code actions"))
         end
         -- local on_attach = config.on_attach
         local on_init = config.on_init
