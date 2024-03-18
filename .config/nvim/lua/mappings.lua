@@ -14,17 +14,17 @@ local map = vim.keymap.set
 -- require("Comment.api").toggle.linewise.current()
 -- end, { desc = "Comment Toggle" })
 map("n", "<leader>/", function()
-    require("Comment.api").toggle.linewise.current()
+	require("Comment.api").toggle.linewise.current()
 end, { desc = "Comment Toggle" })
 
 map(
-    "v",
-    "<leader>/",
-    "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-    { desc = "Comment Toggle" }
+	"v",
+	"<leader>/",
+	"<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+	{ desc = "Comment Toggle" }
 )
 map("n", "<leader>fm", function()
-    require("conform").format()
+	require("conform").format()
 end, { desc = "File Format with conform" })
 map("n", "J", "mzJ`z", { desc = "Join line with cursor in place" })
 map("n", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
@@ -45,10 +45,10 @@ map("n", "<leader>t", "<cmd> Telescope builtin <CR>", { desc = "List telescope f
 map("n", "<leader>ff", "<cmd> Telescope find_files follow=true <CR>", { desc = "Find files" })
 map("n", "<leader>fc", "<cmd> Telescope commands <CR>", { desc = "Find in current buffer" })
 map(
-    "n",
-    "<leader>fn",
-    "<cmd> Telescope lsp_document_symbols ignore_symbols=variable <CR>",
-    { desc = "Find in current buffer" }
+	"n",
+	"<leader>fn",
+	"<cmd> Telescope lsp_document_symbols ignore_symbols=variable <CR>",
+	{ desc = "Find in current buffer" }
 )
 map("n", "<leader>ft", "<cmd> Telescope help_tags <CR>", { desc = "List help tags of nvim" })
 -- ["<leader>u"] = { "<cmd> Telescope undo <CR>", "Undotreee toggle" },
@@ -73,57 +73,57 @@ map("n", "<leader>db", "<cmd> DBUIToggle<CR>", { desc = "Toggle dadbod databse u
 map("n", "<leader>fi", "ggVG=", { desc = "Reindent file" })
 
 map("n", "<leader>fml", function()
-    require("cellular-automaton").start_animation("make_it_rain")
+	require("cellular-automaton").start_animation("make_it_rain")
 end, { desc = "cellular-automaton make_it_rain" })
 
 map("n", "<leader>fu", function()
-    require("cellular-automaton").start_animation("scramble")
+	require("cellular-automaton").start_animation("scramble")
 end, { desc = "cellular-automaton scramble" })
 map("n", "<leader>fuu", function()
-    require("cellular-automaton").start_animation("game_of_life")
+	require("cellular-automaton").start_animation("game_of_life")
 end, { desc = "cellular-automaton game_of_life" })
 -- centered search
 map("n", "n", "nzz", { desc = "Centered jumps in search mode" })
 map("n", "N", "Nzz", { desc = "Centered jumps in search mode" })
 map("n", "*", "*zz", { desc = "Center search term on init" })
 map("n", "<leader>x", function()
-    require("nvchad.tabufline").close_buffer()
+	require("nvchad.tabufline").close_buffer()
 end, { desc = "Close buffer" })
 map("n", "K", function()
-    require("pretty_hover").hover()
+	require("pretty_hover").hover()
 end, { desc = "LSP hover" })
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- harpoon
 map("n", "<leader>m", function()
-    require("harpoon"):list():append()
+	require("harpoon"):list():append()
 end, { desc = "Add file to harpoon" })
 map("n", "<leader>h", function()
-    require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
+	require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
 end, { desc = "Toggle harpoon menu" })
 map("n", "<leader>j", function()
-    require("harpoon"):list():select(1)
+	require("harpoon"):list():select(1)
 end, { desc = "Go to harpoon mark 1" })
 map("n", "<leader>k", function()
-    require("harpoon"):list():select(2)
+	require("harpoon"):list():select(2)
 end, { desc = "Go to harpoon mark 2" })
 map("n", "<leader>l", function()
-    require("harpoon"):list():select(3)
+	require("harpoon"):list():select(3)
 end, { desc = "Go to harpoon mark 3" })
 map("n", "<leader>;", function()
-    require("harpoon"):list():select(4)
+	require("harpoon"):list():select(4)
 end, { desc = "Go to harpoon mark 4" })
 -- bindings for python debugging
 map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Toggle breakpoint" })
 map("n", "<leader>dpr", function()
-    require("dap-python").test_method()
+	require("dap-python").test_method()
 end, { desc = "Debug python run" })
 -- trouble
 map("n", "<leader>ww", function()
-    require("trouble").toggle("document_diagnostics")
+	require("trouble").toggle("workspace_diagnostics")
 end, { desc = "toggle trouble with workspace diagnostics", silent = true, noremap = true })
 map("n", "<leader>ca", function()
-    require("actions-preview").code_actions()
+	require("actions-preview").code_actions()
 end, { desc = "Code actions" })
 
 -- visual mode bindings
@@ -133,7 +133,7 @@ map("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 map("v", "<leader>d", '"_d', { desc = "Delete line to system clipboard" })
 map("v", "<leader>gh", ":Gclog<CR>", { desc = "Git file history!" })
 map("v", "<leader>ca", function()
-    require("actions-preview").code_actions()
+	require("actions-preview").code_actions()
 end, { desc = "Code actions" })
 
 map("x", "<leader>p", '"_dP', { desc = "Paste over highlighted text and preserve clipboard" })
@@ -146,5 +146,5 @@ map("x", "<leader>ri", ":Refactor inline_var", { desc = "Refactor inline variabl
 map("i", "<C-c>", "<Esc>", { desc = "Remap for vertical edit to handle C-c" })
 map("i", "<C-a>", "<ESC>^i", { desc = "Beginning of line" })
 map("i", "<M-CR>", function()
-    vim.fn.feedkeys(vim.fn["copilot#Accept"](), "")
+	vim.fn.feedkeys(vim.fn["copilot#Accept"](), "")
 end, { desc = "Copilot Accept", replace_keycodes = true, nowait = true, silent = true, expr = true, noremap = true })
