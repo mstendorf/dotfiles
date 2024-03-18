@@ -23,8 +23,8 @@ return {
       "djlint",
       "eslint_d",
       "goimports",
-      "rust-analyzer",
-      "rustfmt",
+      -- "rust-analyzer",
+      -- "rustfmt",
     },
   },
 }
