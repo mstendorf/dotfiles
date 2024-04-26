@@ -81,6 +81,16 @@ chars = "\u001B\u007F"
 key = "Back"
 mods = "Alt"
 
+# [[keyboard.bindings]]
+# key = "Tab"
+# mods = "Control" 
+# chars = "\u001b[27;5;9~"
+#
+# [[keyboard.bindings]]
+# key = "Tab"
+# mods = "Control|Shift"
+# chars = "\u001b[27;6;9~"
+
 [scrolling]
 history = 100000
 
