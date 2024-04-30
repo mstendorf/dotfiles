@@ -48,7 +48,7 @@ map("n", "<leader>fc", "<cmd> Telescope commands <CR>", { desc = "Find in curren
 map(
     "n",
     "<leader>fn",
-    "<cmd> Telescope lsp_document_symbols ignore_symbols=variable <CR>",
+    "<cmd> Telescope lsp_document_symbols ignore_symbols=variable,module <CR>",
     { desc = "Find in current buffer" }
 )
 map("n", "<leader>ft", "<cmd> Telescope help_tags <CR>", { desc = "List help tags of nvim" })
