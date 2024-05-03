@@ -60,6 +60,19 @@ map("n", "<leader>gf", "<cmd> Telescope git_files <CR>", { desc = "Find files tr
 map("n", "<leader>gs", "<cmd> LazyGit<CR>", { desc = "Git status!" })
 map("n", "<leader>gh", "<cmd> 0Gclog<CR>", { desc = "Git file history!" })
 map("n", "<leader>gch", "<cmd> Telescope git_file_history <CR>", { desc = "Git commit history!" })
+-- git worktree
+map(
+    "n",
+    "<leader>gw",
+    "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
+    { desc = "Switch git worktree" }
+)
+map(
+    "n",
+    "<leader>gW",
+    "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
+    { desc = "Create git worktree" }
+)
 
 map("n", "gr", "<cmd> Telescope lsp_references<CR>", { desc = "lsp references" })
 map("n", "gd", "<cmd> Telescope lsp_definitions<CR>", { desc = "lsp definitions" })
