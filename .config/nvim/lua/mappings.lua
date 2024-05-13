@@ -64,15 +64,17 @@ map("n", "<leader>gch", "<cmd> Telescope git_file_history <CR>", { desc = "Git c
 map(
     "n",
     "<leader>gw",
-    "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
+    "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees({ path_display = {}, })<CR>",
     { desc = "Switch git worktree" }
 )
-map(
-    "n",
-    "<leader>gW",
-    "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
-    { desc = "Create git worktree" }
-)
+-- map(
+--     "n",
+--     "<leader>gW",
+--     "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree({ path_display = {}, extensions = { fzf = { fuzzy=false}}})<CR>",
+--     { desc = "Create git worktree" }
+-- )
+
+map("n", "<leader>gW", "<cmd>lua new_git_worktree() <CR>", { desc = "Create git worktree" })
 
 map("n", "gr", "<cmd> Telescope lsp_references<CR>", { desc = "lsp references" })
 map("n", "gd", "<cmd> Telescope lsp_definitions<CR>", { desc = "lsp definitions" })
