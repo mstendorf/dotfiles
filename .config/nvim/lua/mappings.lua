@@ -5,7 +5,7 @@ local nomap = vim.keymap.del
 nomap("n", "<leader>gt")
 nomap("n", "<leader>cm")
 -- nomap("n", "<leader>ca")
-nomap("n", "<leader>lf")
+-- nomap("n", "<leader>lf")
 nomap("n", "<tab>")
 
 -- add yours here
@@ -14,10 +14,14 @@ local map = vim.keymap.set
 -- map({ "n", "v" }, "<leader>/", function()
 -- require("Comment.api").toggle.linewise.current()
 -- end, { desc = "Comment Toggle" })
-map("n", "<leader>/", function()
-    require("Comment.api").toggle.linewise.current()
-end, { desc = "Comment Toggle" })
+-- map("n", "<leader>/", function()
+--     require("Comment.api").toggle.linewise.current()
+-- end, { desc = "Comment Toggle" })
 
+-- toggle inlay hints
+map("n", "<leader>lh", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hints" })
 map(
     "v",
     "<leader>/",
