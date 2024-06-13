@@ -101,7 +101,7 @@ history = 100000
 
 [window]
 decorations = "none"
-opacity = 0.9
+opacity = 0.95
 # option_as_alt = "None" # this is what is needed for alacritty to interpret danish [ correctly
 option_as_alt = "Both" # this is what is needed for alacritty to interpret danish [ correctly
 # startup_mode="Fullscreen"

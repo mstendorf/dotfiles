@@ -117,7 +117,7 @@ map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- harpoon
 map("n", "<leader>m", function()
-    require("harpoon"):list():append()
+    require("harpoon"):list():add()
 end, { desc = "Add file to harpoon" })
 map("n", "<leader>h", function()
     require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())

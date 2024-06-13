@@ -4,13 +4,16 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
+# flash highlighted window on focus
+yabai -m signal --add label="flash_focus" event="window_focused" action="yabai -m window \$YABAI_WINDOW_ID --opacity 0.1 && sleep $(yabai -m config window_opacity_duration) && yabai -m window \$YABAI_WINDOW_ID --opacity 0.0"
+
 # config
 yabai -m config layout bsp
-# yabai -m config top_padding    8
-# yabai -m config bottom_padding 8
-# yabai -m config left_padding   8
-# yabai -m config right_padding  8
-# yabai -m config window_gap     8
+# yabai -m config top_padding    5
+# yabai -m config bottom_padding 5
+# yabai -m config left_padding   5
+# yabai -m config right_padding  5
+# yabai -m config window_gap     5
 yabai -m config auto_balance on
 yabai -m config split_ratio 0.5
 yabai -m config window_shadow off
@@ -45,6 +48,7 @@ setup_space 5 mail
 
 # move some apps automatically to specific spaces
 # yabai -m rule --add app="^Spotify$" space=1
+yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off
 yabai -m rule --add app="^Arc$" space=2
 yabai -m rule --add app="^Alacritty$" space=3
 yabai -m rule --add app="Microsoft Teams" space=4
@@ -52,3 +56,7 @@ yabai -m rule --add app="Textual" space=4
 yabai -m rule --add app="^Discord$" space=4
 yabai -m rule --add app="^Messages$" space=5
 yabai -m rule --add app="^Mail$" space=5
+yabai -m rule --add app=Finder manage=off
+yabai -m rule --add app=Calculator manage=off
+
+borders active_color=0xffe1e3e4 width=6.0 &
