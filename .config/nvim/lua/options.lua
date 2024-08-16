@@ -27,12 +27,12 @@ vim.opt.swapfile = false -- no swap files
 local opts = { noremap = true, silent = true }
 
 local function quickfix()
-    vim.lsp.buf.code_action({
-        filter = function(a)
-            return a.isPreferred
-        end,
-        apply = true,
-    })
+	vim.lsp.buf.code_action({
+		filter = function(a)
+			return a.isPreferred
+		end,
+		apply = true,
+	})
 end
 
 vim.keymap.set("n", "<leader>qf", quickfix, opts)
@@ -60,10 +60,16 @@ cnoreabbrev Qall qall
 ]])
 
 vim.api.nvim_create_autocmd({ "LspAttach", "TextChanged", "InsertLeave" }, {
-    callback = function()
-        require("lint").try_lint()
-    end,
+	callback = function()
+		require("lint").try_lint()
+	end,
 })
+
+-- vim.api.nvim_create_autocmd({ "LspAttach" }, {
+-- 	callback = function()
+-- 		print("LSP attached")
+-- 	end,
+-- })
 
 -- vim.api.nvim_create_autocmd({ "LspAttach" }, {
 --   desc = "Disable semantic tokens for rustaceanvim as it fucks the colorscheme",
@@ -79,7 +85,7 @@ vim.api.nvim_create_autocmd({ "LspAttach", "TextChanged", "InsertLeave" }, {
 vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#444b6a", italic = true })
 
 vim.diagnostic.config({
-    float = { border = "rounded" },
+	float = { border = "rounded" },
 })
 
 require("ibl").update()

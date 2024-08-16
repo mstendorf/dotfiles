@@ -2,7 +2,7 @@ local M = {}
 
 M.ui = {
     transparency = true,
-    theme = "chadracula-evondev",
+    theme = "gruvbox",
     cmp = {
         style = "atom",
     },
