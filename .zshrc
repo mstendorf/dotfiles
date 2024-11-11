@@ -137,6 +137,7 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 
 source <(kubectl completion zsh)
+source <(fzf --zsh)
 
 # set -o vi
 # bindkey -v
