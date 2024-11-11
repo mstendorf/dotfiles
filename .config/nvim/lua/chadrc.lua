@@ -1,8 +1,10 @@
 local M = {}
 
-M.ui = {
+M.base46 = {
     transparency = true,
     theme = "gruvbox",
+}
+M.ui = {
     cmp = {
         style = "atom",
     },
