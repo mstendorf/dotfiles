@@ -1,29 +1,21 @@
 local M = {}
 
 M.base46 = {
-    transparency = true,
-    theme = "gruvbox",
+	transparency = true,
+	theme = "gruvbox",
 }
 M.ui = {
-    cmp = {
-        style = "atom",
-    },
-    tabufline = {
-        enabled = false,
-    },
-    statusline = {
-        theme = "minimal",
-        separator_style = "round",
-        overriden_modules = function(modules)
-            modules[#modules] = require("configs.statusline").cursor_position()
-            -- modules[#modules + 1] = require("custom.configs.statusline").clock()
-            -- modules[#modules] = require("custom.configs.statusline").fileInfo()
-            table.remove(modules, 2)
-            table.insert(modules, 2, require("configs.statusline").fileInfo())
-
-            -- table.insert(modules, 8, require("custom.configs.statusline").showcmd())
-        end,
-    },
+	cmp = {
+		style = "atom",
+	},
+	tabufline = {
+		enabled = false,
+	},
+	statusline = {
+		theme = "minimal",
+		separator_style = "round",
+		order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
+	},
 }
 
 return M
