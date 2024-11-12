@@ -20,7 +20,11 @@ return {
                 limit = 100,
             },
             mappings = {
+                n = {
+                    ["<c-d>"] = require("telescope.actions").delete_buffer,
+                },
                 i = {
+                    ["<c-d>"] = require("telescope.actions").delete_buffer,
                     ["<S-Up>"] = function(...)
                         require("telescope.actions").cycle_history_next(...)
                     end,
