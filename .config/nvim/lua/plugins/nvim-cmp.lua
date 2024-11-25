@@ -1,8 +1,12 @@
 return {
-    "hrsh7th/nvim-cmp",
-    opts = function()
-        local M = require("nvchad.configs.cmp")
-        table.insert(M.sources, { name = "crates" })
-        return M
-    end,
+	"hrsh7th/nvim-cmp",
+	opts = function(_, conf)
+		conf.mapping = {
+			["<CR>"] = require("cmp").mapping.confirm({ select = true }),
+			["<Tab>"] = require("cmp").mapping.select_next_item({ behavior = require("cmp").SelectBehavior.Select }),
+			["<S-Tab>"] = require("cmp").mapping.select_prev_item({ behavior = require("cmp").SelectBehavior.Select }),
+			["<Down>"] = require("cmp").mapping.select_next_item({ behavior = require("cmp").SelectBehavior.Select }),
+			["<Up>"] = require("cmp").mapping.select_prev_item({ behavior = require("cmp").SelectBehavior.Select }),
+		}
+	end,
 }
