@@ -37,7 +37,7 @@ M.ui = {
 				end
 				local fn = vim.fn
 				local icon = "󰈚"
-				local filename = (fn.expand("%") == "" and "Empty") or fn.pathshorten(fn.expand("%:~::h"), 4)
+				local filename = (fn.expand("%") == "" and "Empty") or fn.expand("%:~:.")
 
 				if filename ~= "Empty" then
 					local devicons_present, devicons = pcall(require, "nvim-web-devicons")

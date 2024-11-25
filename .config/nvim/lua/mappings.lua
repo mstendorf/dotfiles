@@ -5,6 +5,7 @@ local nomap = vim.keymap.del
 nomap("n", "<leader>gt")
 nomap("n", "<leader>cm")
 nomap("n", "<tab>")
+nomap("n", "<leader>e")
 
 local map = vim.keymap.set
 
