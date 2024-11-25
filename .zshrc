@@ -146,7 +146,7 @@ bindkey -s "^f" "tmux-sessionizer\n"
 source ~/.zsh_aliases
 bindkey "^X^E" edit-command-line
 # bindkey -M vicmd vv edit-command-line
-
+source <(fzf --zsh)
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
