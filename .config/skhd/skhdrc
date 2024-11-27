@@ -83,10 +83,10 @@ alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
 # swap managed window
-alt + ctrl - h : yabai -m window --swap west
-alt + ctrl - j : yabai -m window --swap south
-alt + ctrl - k : yabai -m window --swap north
-alt + ctrl - l : yabai -m window --swap east
+# alt + ctrl - h : yabai -m window --swap west
+# alt + ctrl - j : yabai -m window --swap south
+# alt + ctrl - k : yabai -m window --swap north
+# alt + ctrl - l : yabai -m window --swap east
 
 # move managed window
 # shift + cmd - h : yabai -m window --warp east
@@ -149,7 +149,7 @@ ctrl + alt + cmd - r : yabai --restart-service
 
 # toggle window zoom
 # alt - d : yabai -m window --toggle zoom-parent
-alt - f : yabai -m window --toggle zoom-fullscreen
+# alt - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window split type
 # alt - e : yabai -m window --toggle split

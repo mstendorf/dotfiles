@@ -58,5 +58,6 @@ yabai -m rule --add app="^Messages$" space=5
 yabai -m rule --add app="^Mail$" space=5
 yabai -m rule --add app=Finder manage=off
 yabai -m rule --add app=Calculator manage=off
+yabai -m rule --apply
 
 borders active_color=0xffe1e3e4 width=6.0 &
