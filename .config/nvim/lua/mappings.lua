@@ -66,7 +66,7 @@ map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 -- bindings for python debugging
 map("n", "<leader>dbp", "<cmd> DapToggleBreakpoint <CR>", { desc = "Toggle breakpoint" })
 map("n", "<leader>dbg", function()
-	require("dap").continue()
+    require("dap").continue()
 end, { desc = "Start debugging" })
 map("n", "<leader>dpr", function()
     require("dap-python").test_method()
@@ -83,6 +83,20 @@ vim.keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>", { silent = true, noremap = 
 map("v", "<leader>ca", function()
     require("actions-preview").code_actions()
 end, { desc = "Code actions" })
+
+-- snippets
+local ls = require("luasnip")
+vim.keymap.set({ "i", "s" }, "<C-k>", function()
+    if ls.expand_or_jumpable() then
+        return ls.expand_or_jump()
+    end
+end, { silent = true, desc = "Expand or jump snippet" })
+
+vim.keymap.set({ "i", "s" }, "<C-j>", function()
+    if ls.jumpable(-1) then
+        return ls.jump(-1)
+    end
+end, { silent = true, desc = "Jump to prev snippet" })
 
 vim.cmd([[
 cnoreabbrev W! w!
