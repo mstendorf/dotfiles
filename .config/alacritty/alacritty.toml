@@ -106,6 +106,6 @@ opacity = 0.95
 option_as_alt = "Both" # this is what is needed for alacritty to interpret danish [ correctly
 # startup_mode="Fullscreen"
 
-[window.padding]
-x = 3
-y = 3
+# [window.padding]
+# x = 3
+# y = 1
