@@ -64,7 +64,10 @@ end, { desc = "cellular-automaton game_of_life" })
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- bindings for python debugging
-map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Toggle breakpoint" })
+map("n", "<leader>dbp", "<cmd> DapToggleBreakpoint <CR>", { desc = "Toggle breakpoint" })
+map("n", "<leader>dbg", function()
+	require("dap").continue()
+end, { desc = "Start debugging" })
 map("n", "<leader>dpr", function()
 	require("dap-python").test_method()
 end, { desc = "Debug python run" })
