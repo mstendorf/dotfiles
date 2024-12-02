@@ -61,32 +61,54 @@ return {
             -- true
             analyze_open_documents_only = false,
         })
+        -- yaml
+        lspconfig.yamlls.setup({
+            autostart = false,
+            on_attach = on_attach,
+            on_init = on_init,
+            capabilities = capabilities,
+        })
+
+        -- bash
+        lspconfig.bashls.setup({
+            on_attach = on_attach,
+            on_init = on_init,
+            capabilities = capabilities,
+            filetypes = { "bash", "sh", "zsh" },
+        })
 
         lspconfig.pyright.setup({
             on_attach = on_attach,
             on_init = on_init,
             capabilities = capabilities,
-            -- capabilities = (function()
-            --   local capabilities = vim.lsp.protocol.make_client_capabilities()
-            --   capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
-            --   return capabilities
-            -- end)(),
+            -- before_init = function(_, conf)
+            --     -- local default_venv_path = path.join(vim.env.HOME, ".pyenv", "versions", "bnaaenv", "bin", "python")
+            --     local default_venv_path = os.getenv("HOME") .. "/.pyenv/versions/bnaaenv"
+            --
+            --     conf.settings.python.pythonPath = default_venv_path .. "/bin/python"
+            --
+            --     conf.settings.python.analysis.useLibraryCodeForTypes = true
+            -- end,
             root_dir = function(fname)
                 local root_files = {
                     "pyrightconfig.json",
                     -- 'pyproject.toml',
                     -- 'Dockerfile',
                 }
-                return util.root_pattern(unpack(root_files))(fname)
+                local path = util.root_pattern(unpack(root_files))(fname)
                     or util.find_git_ancestor(fname)
                     or util.path.dirname(fname)
+
+                return path
             end,
             settings = {
                 python = {
+                    disableOrganizeImports = false,
                     analysis = {
                         autoSearchPaths = true,
-                        -- useLibraryCodeForTypes = true,
-                        diagnosticMode = "openFilesOnly",
+                        useLibraryCodeForTypes = true,
+                        diagnosticMode = "workspace",
+                        autoImportCompletions = true,
                         -- typeCheckingMode = "basic",
                     },
                     -- handlers = {
