@@ -3,6 +3,8 @@ return {
     opts = {
         ensure_installed = {
             "stylua",
+            "bash-language-server",
+            "yaml-language-server",
             "html-lsp",
             "css-lsp",
             "csharpier",
@@ -14,6 +16,7 @@ return {
             -- "mypy",
             "pylint",
             "pyright", -- python LSP
+            "isort",
             "ruff",
             "ruff-lsp",
             "typescript-language-server", -- JS LSP

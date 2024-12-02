@@ -11,10 +11,10 @@ local map = vim.keymap.set
 
 -- toggle inlay hints
 map("n", "<leader>lh", function()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay hints" })
 map("n", "<leader>fm", function()
-	require("conform").format()
+    require("conform").format()
 end, { desc = "File Format with conform" })
 
 -- som basic qol remaps
@@ -35,7 +35,7 @@ map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines down" })
 map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close buffer" })
 map("n", "K", function()
-	require("pretty_hover").hover()
+    require("pretty_hover").hover()
 end, { desc = "LSP hover" })
 
 -- insert mode bindings
@@ -52,31 +52,33 @@ map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<cr>", { desc = "run t
 
 -- cullular automaton
 map("n", "<leader>fml", function()
-	require("cellular-automaton").start_animation("make_it_rain")
+    require("cellular-automaton").start_animation("make_it_rain")
 end, { desc = "cellular-automaton make_it_rain" })
 
 map("n", "<leader>fu", function()
-	require("cellular-automaton").start_animation("scramble")
+    require("cellular-automaton").start_animation("scramble")
 end, { desc = "cellular-automaton scramble" })
 map("n", "<leader>fuu", function()
-	require("cellular-automaton").start_animation("game_of_life")
+    require("cellular-automaton").start_animation("game_of_life")
 end, { desc = "cellular-automaton game_of_life" })
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- bindings for python debugging
 map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Toggle breakpoint" })
 map("n", "<leader>dpr", function()
-	require("dap-python").test_method()
+    require("dap-python").test_method()
 end, { desc = "Debug python run" })
 
 -- trouble
 map("n", "<leader>ww", function()
-	require("trouble").toggle("workspace_diagnostics")
+    require("trouble").toggle("workspace_diagnostics")
 end, { desc = "toggle trouble with workspace diagnostics", silent = true, noremap = true })
 
+-- zen mode
+vim.keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>", { silent = true, noremap = true, desc = "Zen mode" })
 -- visual mode bindings
 map("v", "<leader>ca", function()
-	require("actions-preview").code_actions()
+    require("actions-preview").code_actions()
 end, { desc = "Code actions" })
 
 vim.cmd([[
