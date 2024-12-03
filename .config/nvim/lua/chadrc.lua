@@ -7,8 +7,8 @@ M.base46 = {
 M.ui = {
 	cmp = {
 		-- style = "atom_colored",
-		-- lspkind_text = false,
-		icons_left = true,
+		lspkind_text = true,
+		-- icons_left = true,
 	},
 	lsp = {
 		signature = true,
