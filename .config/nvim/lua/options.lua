@@ -27,6 +27,7 @@ vim.opt.undofile = true
 vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.updatetime = 50
+-- vim.opt.cmdheight = 1
 
 local opts = { noremap = true, silent = true }
 

@@ -6,6 +6,7 @@ alias lll="ls -lah"
 alias ll="ls -la"
 alias h="history"
 alias e="nvim"
+alias en='NVIM_APPNAME="nvimnew" nvim'
 alias ta="tmux a"
 # alias grep="rg"
 alias cat="bat"
