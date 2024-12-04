@@ -10,7 +10,7 @@ nomap("n", "<leader>e")
 local map = vim.keymap.set
 
 -- toggle inlay hints
-map("n", "<leader>lh", function()
+map("n", "<leader>ih", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay hints" })
 map("n", "<leader>fm", function()
