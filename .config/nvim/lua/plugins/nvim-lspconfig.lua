@@ -92,7 +92,7 @@ return {
             root_dir = function(fname)
                 local root_files = {
                     "pyrightconfig.json",
-                    -- 'pyproject.toml',
+                    "pyproject.toml",
                     -- 'Dockerfile',
                 }
                 local path = util.root_pattern(unpack(root_files))(fname)
