@@ -32,19 +32,19 @@ vim.opt.updatetime = 50
 local opts = { noremap = true, silent = true }
 
 local function quickfix()
-	vim.lsp.buf.code_action({
-		filter = function(a)
-			return a.isPreferred
-		end,
-		apply = true,
-	})
+    vim.lsp.buf.code_action({
+        filter = function(a)
+            return a.isPreferred
+        end,
+        apply = true,
+    })
 end
 
 vim.keymap.set("n", "<leader>qf", quickfix, opts)
 vim.api.nvim_create_autocmd({ "LspAttach", "TextChanged", "InsertLeave" }, {
-	callback = function()
-		require("lint").try_lint()
-	end,
+    callback = function()
+        require("lint").try_lint()
+    end,
 })
 
 -- vim.api.nvim_create_autocmd({ "LspAttach" }, {
@@ -61,7 +61,24 @@ vim.api.nvim_create_autocmd({ "LspAttach", "TextChanged", "InsertLeave" }, {
 vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#444b6a", italic = true })
 
 vim.diagnostic.config({
-	float = { border = "rounded" },
+    float = { border = "rounded" },
 })
-
+-- vim.diagnostic.config({
+--     virtual_text = {
+--         source = true,
+--         format = function(diagnostic)
+--             if diagnostic.user_data and diagnostic.user_data.code then
+--                 return string.format("%s %s", diagnostic.user_data.code, diagnostic.message)
+--             else
+--                 return diagnostic.message
+--             end
+--         end,
+--     },
+--     signs = true,
+--     float = {
+--         header = "Diagnostics",
+--         source = true,
+--         border = "rounded",
+--     },
+-- })
 require("ibl").update()

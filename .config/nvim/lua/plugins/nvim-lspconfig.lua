@@ -18,6 +18,11 @@ return {
             vim.keymap.set("n", "<leader>ca", function()
                 require("actions-preview").code_actions()
             end, opts("Code actions"))
+
+            vim.keymap.set("n", "gr", function()
+                require("telescope.builtin").lsp_references()
+            end, opts("References"))
+            vim.keymap.set("n", "gd", "<cmd> Telescope lsp_definitions<CR>", { desc = "lsp definitions" })
         end
         -- local on_attach = config.on_attach
         local on_init = config.on_init
@@ -81,6 +86,11 @@ return {
             on_attach = on_attach,
             on_init = on_init,
             capabilities = capabilities,
+            -- capabilities = (function()
+            --     local capa = vim.lsp.protocol.make_client_capabilities()
+            --     capa.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+            --     return capa
+            -- end)(),
             -- before_init = function(_, conf)
             --     -- local default_venv_path = path.join(vim.env.HOME, ".pyenv", "versions", "bnaaenv", "bin", "python")
             --     local default_venv_path = os.getenv("HOME") .. "/.pyenv/versions/bnaaenv"
@@ -119,7 +129,13 @@ return {
             filetypes = { "python" },
         })
 
-        -- lspconfig.ruff_lsp.setup {
+        lspconfig.jinja_lsp.setup({
+            on_attach = on_attach,
+            on_init = on_init,
+            capabilities = capabilities,
+            filetypes = { "jinja", "html", "htmldjango" },
+        })
+        -- lspconfig.ruff_lsp.setup :
         --   on_attach = on_attach,
         --   init_options = {
         --     settings = {

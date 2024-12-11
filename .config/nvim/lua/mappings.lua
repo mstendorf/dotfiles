@@ -6,6 +6,7 @@ nomap("n", "<leader>gt")
 nomap("n", "<leader>cm")
 nomap("n", "<tab>")
 nomap("n", "<leader>e")
+nomap("n", "<leader>n")
 
 local map = vim.keymap.set
 

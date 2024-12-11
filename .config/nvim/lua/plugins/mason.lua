@@ -13,7 +13,7 @@ return {
             "lua-language-server",
             "black",
             "debugpy",
-            -- "mypy",
+            "mypy",
             "pylint",
             "pyright", -- python LSP
             "isort",
@@ -28,6 +28,7 @@ return {
             "eslint_d",
             "goimports",
             "clangd",
+            "jinja-lsp",
             -- "rust-analyzer",
             -- "rustfmt",
         },

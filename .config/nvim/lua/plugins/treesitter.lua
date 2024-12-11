@@ -28,6 +28,7 @@ return {
                 "jinja2",
                 "html",
                 "htmldjango",
+                "css",
                 "javascript",
                 "typescript",
                 "javascriptreact",
