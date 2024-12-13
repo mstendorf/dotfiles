@@ -81,4 +81,4 @@ vim.diagnostic.config({
 --         border = "rounded",
 --     },
 -- })
-require("ibl").update()
+-- require("ibl").update()
