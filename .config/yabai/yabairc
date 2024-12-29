@@ -51,6 +51,7 @@ setup_space 5 mail
 yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off
 yabai -m rule --add app="^Arc$" space=2
 yabai -m rule --add app="^Alacritty$" space=3
+yabai -m rule --add app="^Ghostty$" space=3
 yabai -m rule --add app="Microsoft Teams" space=4
 yabai -m rule --add app="Textual" space=4
 yabai -m rule --add app="^Discord$" space=4
