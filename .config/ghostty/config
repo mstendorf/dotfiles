@@ -2,10 +2,11 @@ font-family = "JetBrainsMonoNL Nerd Font Mono"
 font-family-bold = "JetBrainsMonoNL NFM Bold"
 font-family-italic = "JetBrainsMonoNL NFM Italic"
 font-family-bold-italic = "JetBrainsMonoNL NFM Bold Italic"
-font-size = 18
+font-size = 17
+font-thicken = true
 
 
-theme = "tokyonight"
+theme = "catppuccin-mocha"
 
 background-opacity = 0.98
 #background-blur-radius = 1
@@ -18,3 +19,6 @@ cursor-style-blink = false
 
 
 shell-integration-features = no-cursor
+
+
+command = /bin/zsh ~/.local/bin/ghostty-tmux
