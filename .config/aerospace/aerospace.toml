@@ -158,6 +158,7 @@ alt-m = 'mode monitor'
 alt-shift-c = 'reload-config'
 alt-a = ['exec-and-forget open -a Arc.app', 'mode main']
 alt-d = ['exec-and-forget open -a Ghostty.app', 'mode main']
+alt-n = ['exec-and-forget osascript ~/.config/aerospace/applescripts/notifications.scpt']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
