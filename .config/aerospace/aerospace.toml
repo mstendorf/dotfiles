@@ -159,11 +159,13 @@ alt-shift-c = 'reload-config'
 
 # app launching
 ctrl-alt-cmd-shift-a = ['exec-and-forget open -a Arc.app', 'mode main']
-ctrl-alt-cmd-shift-c = ['exec-and-forget open -a Discord.app', 'mode main']
-ctrl-alt-cmd-shift-d = ['exec-and-forget open -a Ghostty.app', 'mode main']
-ctrl-alt-cmd-shift-t = ['exec-and-forget open -a "Microsoft Teams.app"', 'mode main']
-ctrl-alt-cmd-shift-s = ['exec-and-forget open -a Messages.app', 'mode main']
+ctrl-alt-cmd-shift-c = ['exec-and-forget open -a Discord.app', 'mode main'] # chat
+ctrl-alt-cmd-shift-d = ['exec-and-forget open -a Ghostty.app', 'mode main'] # dev
+ctrl-alt-cmd-shift-f = ['exec-and-forget open -a Finder.app', 'mode main']
+ctrl-alt-cmd-shift-l = ['exec-and-forget open -a Music.app', 'mode main'] # listen
 ctrl-alt-cmd-shift-m = ['exec-and-forget open -a Mail.app', 'mode main']
+ctrl-alt-cmd-shift-s = ['exec-and-forget open -a Messages.app', 'mode main']
+ctrl-alt-cmd-shift-t = ['exec-and-forget open -a "Microsoft Teams.app"', 'mode main']
 
 ctrl-alt-cmd-shift-n = ['exec-and-forget osascript ~/.config/aerospace/applescripts/notifications.scpt']
 
