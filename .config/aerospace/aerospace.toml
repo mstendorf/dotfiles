@@ -234,8 +234,8 @@ if.app-id = 'com.apple.Music'
 run = ['move-node-to-workspace 8']
 
 [[on-window-detected]]
-if.app-id = 'com.shapr3d.shapr'
-run = ['move-node-to-workspace 8']
+if.app-id = 'com.apple.finder'
+run = ['layout floating', 'move-node-to-workspace 1']
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
