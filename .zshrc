@@ -136,6 +136,9 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
+function ff() {
+    aerospace list-windows --all | fzf --bind 'enter:execute(zsh -c "aerospace focus --window-id {1}")+abort'
+}
 
 source <(kubectl completion zsh)
 source <(fzf --zsh)
