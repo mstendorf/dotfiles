@@ -127,6 +127,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/shims:${PATH}"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+eval "$(uv generate-shell-completion zsh)"
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
