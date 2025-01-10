@@ -1,5 +1,15 @@
-tell application "System Events" to tell application process "NotificationCenter"
-        try
-                perform (actions of UI elements of UI element 1 of scroll area 1 of group 1 of group 1 of window "Notification Center" of application process "NotificationCenter" of application "System Events" whose name starts with "Name:Close" or name starts with "Name:Clear All")
-        end try
+tell application "System Events"
+  tell process "NotificationCenter"
+    if not (window "Notification Center" exists) then return
+    set alertGroups to groups of first UI element of first scroll area of first group of window "Notification Center"
+    repeat with aGroup in alertGroups
+      try
+        perform (first action of aGroup whose name contains "Close" or name contains "Clear")
+      on error errMsg
+        log errMsg
+      end try
+    end repeat
+    -- Show no message on success
+    return ""
+  end tell
 end tell
