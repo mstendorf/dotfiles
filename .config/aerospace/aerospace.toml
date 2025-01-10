@@ -166,6 +166,7 @@ ctrl-alt-cmd-shift-l = ['exec-and-forget open -a Music.app', 'mode main'] # list
 ctrl-alt-cmd-shift-m = ['exec-and-forget open -a Mail.app', 'mode main']
 ctrl-alt-cmd-shift-s = ['exec-and-forget open -a Messages.app', 'mode main']
 ctrl-alt-cmd-shift-t = ['exec-and-forget open -a "Microsoft Teams.app"', 'mode main']
+ctrl-alt-cmd-shift-o = ['exec-and-forget open -a "Obsidian"', 'mode main']
 
 ctrl-alt-cmd-shift-n = ['exec-and-forget osascript ~/.config/aerospace/applescripts/notifications.scpt']
 
@@ -206,6 +207,10 @@ alt-b = ['exec-and-forget open -a Arc.app', 'mode main']
 
 # Pin apps to the workspace
 [[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['layout floating', 'move-node-to-workspace 1']
+
+[[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = ['move-node-to-workspace 2']
 
@@ -234,12 +239,8 @@ if.app-id = 'com.apple.Music'
 run = ['move-node-to-workspace 8']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = ['layout floating', 'move-node-to-workspace 1']
-
-[[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = ['move-node-to-workspace 9']
+run = ['move-node-to-workspace 8']
 
 # [[on-window-detected]]
 # if.app-id = ''
