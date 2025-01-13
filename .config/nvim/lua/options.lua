@@ -41,7 +41,7 @@ local function quickfix()
 end
 
 vim.keymap.set("n", "<leader>qf", quickfix, opts)
-vim.api.nvim_create_autocmd({ "LspAttach", "TextChanged", "InsertLeave" }, {
+vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
     callback = function()
         require("lint").try_lint()
     end,

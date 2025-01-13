@@ -25,6 +25,8 @@ return {
         --   --   note = "info",
         --   -- },
         -- }
+        -- local mypy = lint.linters.mypy
+        -- mypy.args = { "--cache-fine-grained" }
         lint.linters_by_ft = {
             python = { "ruff", "mypy" },
             javascript = { "djlint" },
