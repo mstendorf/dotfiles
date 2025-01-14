@@ -102,8 +102,8 @@ export EDITOR="nvim"
 # export ARCHFLAGS="-arch x86_64"
 
 
-# SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh; export SSH_AUTH_SOCK;
-# eval $(gpg-agent --daemon 2>/dev/null)
+SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh; export SSH_AUTH_SOCK;
+eval $(gpg-agent --daemon 2>/dev/null)
 
 # add local bin to Path
 export PATH=$HOME/.local/bin:$PATH
