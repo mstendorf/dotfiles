@@ -2,8 +2,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -11,6 +9,9 @@ export ZSH="$HOME/.oh-my-zsh"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -79,7 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting vi-mode)
+plugins=(zsh-syntax-highlighting vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,9 +119,10 @@ export PATH="$GOBIN:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/shims:${PATH}"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(uv generate-shell-completion zsh)"
+export K9S_CONFIG_DIR=$HOME/.config/k9s
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+# eval "$(uv generate-shell-completion zsh)"
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
@@ -136,8 +138,7 @@ function ff() {
     aerospace list-windows --all | fzf --bind 'enter:execute(zsh -c "aerospace focus --window-id {1}")+abort'
 }
 
-source <(kubectl completion zsh)
-source <(fzf --zsh)
+# source <(kubectl completion zsh)
 
 # set -o vi
 # bindkey -v
@@ -145,7 +146,8 @@ export KEYTIMEOUT=1
 source ~/.zsh_aliases
 # bindkey -M vicmd vv edit-command-line
 source <(fzf --zsh)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
