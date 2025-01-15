@@ -20,6 +20,13 @@ return {
 		local builtin = require("telescope.builtin")
 		local actions = require("telescope.actions")
 		require("telescope").setup({
+			pickers = {
+				live_grep = {
+					mappings = {
+						i = { ["<c-f>"] = actions.to_fuzzy_refine },
+					},
+				},
+			},
 			defaults = {
 				prompt_prefix = " ",
 				file_ignore_patterns = { "bin/.*", "obj/.*", "__pycache__/*" },
