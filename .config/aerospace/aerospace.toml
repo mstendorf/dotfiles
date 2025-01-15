@@ -46,8 +46,8 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 0
-inner.vertical =   0
+inner.horizontal = 8
+inner.vertical =   8
 outer.left =       0
 outer.bottom =     0
 outer.top =        0
@@ -168,7 +168,7 @@ ctrl-alt-cmd-shift-s = ['exec-and-forget open -a Messages.app', 'mode main']
 ctrl-alt-cmd-shift-t = ['exec-and-forget open -a "Microsoft Teams.app"', 'mode main']
 ctrl-alt-cmd-shift-o = ['exec-and-forget open -a "Obsidian"', 'mode main']
 
-ctrl-alt-cmd-shift-n = ['exec-and-forget osascript ~/.config/aerospace/applescripts/notifications.scpt']
+ctrl-alt-cmd-shift-n = ['exec-and-forget osascript ~/.config/aerospace/applescripts/notifications.scpt', 'mode main']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

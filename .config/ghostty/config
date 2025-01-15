@@ -12,6 +12,7 @@ font-feature = -calt
 font-feature = -dlig
 
 theme = "catppuccin-mocha"
+#theme = "rose-pine"
 
 background-opacity = 0.95
 background-blur-radius = 20
