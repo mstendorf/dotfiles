@@ -5,7 +5,49 @@ return {
     ---@type snacks.Config
     opts = {
         bigfile = { enabled = true },
-        dashboard = { enabled = true },
+        dashboard = {
+            enabled = true,
+            preset = {
+
+                keys = {
+                    { icon = " ", key = "w", desc = "Git worktree", action = "<leader>gw" },
+                    { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+                    { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+                    {
+                        icon = " ",
+                        key = "g",
+                        desc = "Find Text",
+                        action = ":lua Snacks.dashboard.pick('live_grep')",
+                    },
+                    {
+                        icon = " ",
+                        key = "r",
+                        desc = "Recent Files",
+                        action = ":lua Snacks.dashboard.pick('oldfiles')",
+                    },
+                    {
+                        icon = " ",
+                        key = "c",
+                        desc = "Config",
+                        action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+                    },
+                    { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+                    {
+                        icon = "󰒲 ",
+                        key = "L",
+                        desc = "Lazy",
+                        action = ":Lazy",
+                        enabled = package.loaded.lazy ~= nil,
+                    },
+                    { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                },
+                sections = {
+                    { section = "header" },
+                    { section = "keys", gap = 1, padding = 1 },
+                    { section = "startup" },
+                },
+            },
+        },
         indent = { enabled = true },
         input = { enabled = true },
         dim = { enabled = false },
@@ -29,7 +71,6 @@ return {
             -- Handler to open the url in a browser
             ---@param url string
             open = function(url)
-                print("Opening 111", url)
                 if vim.fn.has("nvim-0.10") == 0 then
                     require("lazy.util").open(url, { system = true })
                     return
@@ -226,7 +267,7 @@ return {
                 -- Snacks.toggle
                 --     .option("background", { off = "light", on = "dark", name = "Dark Background" })
                 --     :map("<leader>ub")
-                Snacks.toggle.inlay_hints():map("<leader>th")
+                Snacks.toggle.inlay_hints():map("<leader>ti")
                 Snacks.toggle.indent():map("<leader>tg")
                 -- Snacks.toggle.dim():map("<leader>tD")
             end,
