@@ -79,10 +79,16 @@ return {
 		)
 		vim.keymap.set("n", "<leader>ff", "<cmd> Telescope find_files follow=true <CR>", { desc = "Find files" })
 		vim.keymap.set("n", "<leader>fw", "<cmd> Telescope live_grep <CR>", { desc = "Find words" })
-		vim.keymap.set("n", "<leader>fW", function()
-			local word = vim.fn.expand("<cWORD>")
-			builtin.grep_string({ search = word })
-		end)
+		vim.keymap.set(
+			"n",
+			"<leader>fW",
+			'<cmd> Telescope grep_string search="" only_sort_text=true <CR>',
+			{ desc = "Find fuzzy words" }
+		)
+		-- vim.keymap.set("n", "<leader>fW", function()
+		-- 	local word = vim.fn.expand("<cWORD>")
+		-- 	builtin.grep_string({ search = word })
+		-- end)
 		vim.keymap.set("n", "<leader>fb", "<cmd> Telescope buffers <CR>", { desc = "Find buffers" })
 		vim.keymap.set("n", "<leader>fc", "<cmd> Telescope commands <CR>", { desc = "Find in current buffer" })
 		vim.keymap.set("n", "<leader>fn", "<cmd> Telescope lsp_document_symbols ignore_symbols=variable,module <CR>")
