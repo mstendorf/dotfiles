@@ -1,4 +1,5 @@
-local code_files = { "python", "javascript", "javascriptreact", "htmldjango", "html", "css", "cs", "go", "lua" }
+local code_files =
+    { "python", "javascript", "javascriptreact", "jinja", "htmldjango", "html", "css", "cs", "go", "lua" }
 return {
     "stevearc/conform.nvim",
     config = function()

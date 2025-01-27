@@ -27,7 +27,7 @@ return {
             filetypes = {
                 "jinja2",
                 "html",
-                "htmldjango",
+                -- "htmldjango",
                 "css",
                 "javascript",
                 "typescript",
