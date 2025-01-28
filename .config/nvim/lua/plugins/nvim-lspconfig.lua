@@ -69,7 +69,7 @@ return {
 		})
 		-- yaml
 		lspconfig.yamlls.setup({
-			autostart = false,
+			-- autostart = false,
 			on_attach = on_attach,
 			on_init = on_init,
 			capabilities = capabilities,
