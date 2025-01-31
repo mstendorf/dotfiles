@@ -26,7 +26,7 @@ return {
         --   -- },
         -- }
         -- local mypy = lint.linters.mypy
-        -- mypy.args = { "--cache-fine-grained" }
+        -- mypy.args = { "--implicit-reexport" }
         lint.linters_by_ft = {
             python = { "ruff", "mypy" },
             javascript = { "djlint" },

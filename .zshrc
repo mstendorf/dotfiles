@@ -120,8 +120,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/shims:${PATH}"
 export K9S_CONFIG_DIR=$HOME/.config/k9s
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 # eval "$(uv generate-shell-completion zsh)"
 
 autoload -U up-line-or-beginning-search

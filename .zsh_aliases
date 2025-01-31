@@ -13,6 +13,7 @@ alias en='NVIM_APPNAME="nvimnew" nvim'
 alias ta="tmux a || tmux"
 # alias grep="rg"
 alias cat="bat"
+alias cats="bat --style=plain"
 
 # dev related
 alias pygrep="rg --type py"
