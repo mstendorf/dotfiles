@@ -20,8 +20,11 @@ background-blur-radius = 20
 window-decoration = false
 
 #cursor-style = block
-cursor-opacity = 0.7
+#cursor-opacity = 0.7
 cursor-style-blink = false
+cursor-text = #000000
+
+
 
 shell-integration-features = no-cursor
 
