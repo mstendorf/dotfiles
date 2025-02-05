@@ -19,8 +19,12 @@ background-blur-radius = 20
 
 window-decoration = false
 
-cursor-style = block
+#cursor-style = block
+#cursor-opacity = 0.7
 cursor-style-blink = false
+cursor-text = #000000
+
+
 
 shell-integration-features = no-cursor
 
@@ -28,7 +32,7 @@ macos-option-as-alt = true
 quit-after-last-window-closed = true
 auto-update = "download"
 
-keybind = global:ctrl+alt+q=toggle_quick_terminal
+#keybind = global:ctrl+alt+q=toggle_quick_terminal
 
 #command = /bin/zsh ~/.local/bin/ghostty-tmux
 
