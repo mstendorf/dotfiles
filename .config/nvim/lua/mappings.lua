@@ -64,12 +64,6 @@ map("n", "<leader>fuu", function()
 end, { desc = "cellular-automaton game_of_life" })
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
--- bindings for python debugging
-map("n", "<M-b>", "<cmd> DapToggleBreakpoint <CR>", { desc = "Toggle breakpoint" })
-map("n", "<leader>dbg", function()
-    require("dap").continue()
-end, { desc = "Start debugging" })
-
 -- trouble
 map(
     "n",

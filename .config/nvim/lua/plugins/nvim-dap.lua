@@ -17,5 +17,15 @@ return {
         vim.keymap.set({ "n", "v", "i" }, "<C-M-k>", function()
             dap.step_back()
         end, { silent = true, desc = "Step back" })
+
+        vim.keymap.set("n", "<leader>dbg", function()
+            require("dap").continue()
+        end, { desc = "Start debugging" })
+
+        vim.keymap.set("n", "<leader>drc", function()
+            require("dat").run_to_cursor()
+        end, { silent = true, desc = "Run to cursor" })
+
+        vim.keymap.set("n", "<M-b>", "<cmd> DapToggleBreakpoint <CR>", { desc = "Toggle breakpoint" })
     end,
 }
