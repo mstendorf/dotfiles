@@ -165,6 +165,7 @@ ctrl-alt-cmd-shift-f = ['exec-and-forget open -a Finder.app', 'mode main']
 ctrl-alt-cmd-shift-l = ['exec-and-forget open -a Music.app', 'mode main'] # listen
 ctrl-alt-cmd-shift-m = ['exec-and-forget open -a Mail.app', 'mode main']
 ctrl-alt-cmd-shift-s = ['exec-and-forget open -a Messages.app', 'mode main']
+ctrl-alt-cmd-shift-w = ['exec-and-forget open -a Signal.app', 'mode main']
 ctrl-alt-cmd-shift-t = ['exec-and-forget open -a "Microsoft Teams.app"', 'mode main']
 ctrl-alt-cmd-shift-o = ['exec-and-forget open -a "Obsidian"', 'mode main']
 
@@ -210,14 +211,17 @@ alt-b = ['exec-and-forget open -a Arc.app', 'mode main']
 if.app-id = 'com.apple.finder'
 run = ['layout floating', 'move-node-to-workspace 1']
 
+# desktop 2 - browsing
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = ['move-node-to-workspace 2']
 
+# desktop 3 - development
 [[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
 run = ['move-node-to-workspace 3']
 
+# desktop 4 - chat apps
 [[on-window-detected]]
 if.app-id = "com.microsoft.teams2"
 run = ['move-node-to-workspace 4']
@@ -226,14 +230,25 @@ run = ['move-node-to-workspace 4']
 if.app-id = "com.hnc.Discord"
 run = ['move-node-to-workspace 4']
 
-[[on-window-detected]]
-if.app-id = 'com.apple.mail'
-run = ['move-node-to-workspace 5']
-
+# desktop 5 - messenger apps
 [[on-window-detected]]
 if.app-id = 'com.apple.MobileSMS'
 run = ['move-node-to-workspace 5']
 
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = ['move-node-to-workspace 5']
+
+# desktop 6 - oldschool messaging (mail, irc etc.)
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = ['move-node-to-workspace 6']
+
+[[on-window-detected]]
+if.app-id = 'com.codeux.apps.textual-mas'
+run = ['move-node-to-workspace 6']
+
+# desktop 8 - second screen, music player etc. might get rid of it.
 [[on-window-detected]]
 if.app-id = 'com.apple.Music'
 run = ['move-node-to-workspace 8']
