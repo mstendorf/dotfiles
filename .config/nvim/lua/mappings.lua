@@ -38,6 +38,7 @@ map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close buffer" })
 map("n", "K", function()
     require("pretty_hover").hover()
 end, { desc = "LSP hover" })
+map("x", "g/", "<Esc>/\\%V") -- Search in visual selection only
 
 -- insert mode bindings
 map("i", "<C-c>", "<Esc>", { desc = "Remap for vertical edit to handle C-c" })

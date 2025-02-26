@@ -29,6 +29,7 @@ vim.opt.termguicolors = true
 vim.opt.updatetime = 50
 -- vim.opt.cmdheight = 1
 
+vim.g.loaded_2html_plugin = 1
 local opts = { noremap = true, silent = true }
 
 local function quickfix()
