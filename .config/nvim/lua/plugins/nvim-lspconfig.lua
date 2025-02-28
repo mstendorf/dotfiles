@@ -90,92 +90,43 @@ return {
             filetypes = { "python" },
         })
 
-        -- lspconfig.pyright.setup({
-        --     on_attach = on_attach,
-        --     on_init = on_init,
-        --     capabilities = capabilities,
-        --     -- capabilities = (function()
-        --     --     local capa = vim.lsp.protocol.make_client_capabilities()
-        --     --     capa.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
-        --     --     return capa
-        --     -- end)(),
-        --     -- before_init = function(_, conf)
-        --     --     -- local default_venv_path = path.join(vim.env.HOME, ".pyenv", "versions", "bnaaenv", "bin", "python")
-        --     --     local default_venv_path = os.getenv("HOME") .. "/.pyenv/versions/bnaaenv"
-        --     --
-        --     --     conf.settings.python.pythonPath = default_venv_path .. "/bin/python"
-        --     --
-        --     --     conf.settings.python.analysis.useLibraryCodeForTypes = true
-        --     -- end,
-        --     root_dir = function(fname)
-        --         local root_files = {
-        --             "pyrightconfig.json",
-        --             -- "pyproject.toml",
-        --             -- 'Dockerfile',
-        --         }
-        --         local path = util.root_pattern(unpack(root_files))(fname)
-        --             or util.find_git_ancestor(fname)
-        --             or util.path.dirname(fname)
-        --
-        --         return path
-        --     end,
-        --     settings = {
-        --         python = {
-        --             disableOrganizeImports = false,
-        --             analysis = {
-        --                 autoSearchPaths = true,
-        --                 useLibraryCodeForTypes = true,
-        --                 diagnosticMode = "workspace",
-        --                 autoImportCompletions = true,
-        --                 -- typeCheckingMode = "basic",
-        --             },
-        --             -- handlers = {
-        --             --   ["textDocument/publishDiagnostics"] = function() end,
-        --             -- },
-        --         },
-        --     },
-        --     filetypes = { "python" },
-        -- })
-        --
         lspconfig.jinja_lsp.setup({
             on_attach = on_attach,
             on_init = on_init,
             capabilities = capabilities,
             filetypes = { "jinja", "html", "htmldjango" },
         })
-        -- lspconfig.ruff_lsp.setup :
-        --   on_attach = on_attach,
-        --   init_options = {
-        --     settings = {
-        --       -- Any extra CLI arguments for `ruff` go here.
-        --       args = {
-        --                 "--line-length=110",
-        --             },
-        --     }
-        --   }
-        -- }
+
+        lspconfig.eslint.setup({
+            on_attach = on_attach,
+            on_init = on_init,
+            capabilities = capabilities,
+            filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+        })
+
+        lspconfig.tailwindcss.setup({
+            on_attach = on_attach,
+            on_init = on_init,
+            capabilities = capabilities,
+            filetypes = { "html", "css", "scss", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+        })
+
         lspconfig.ts_ls.setup({
             on_attach = on_attach,
             on_init = on_init,
             capabilities = capabilities,
-            filetypes = { "javascript" },
+            filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
         })
 
         lspconfig.html.setup({
             on_attach = on_attach,
             on_init = on_init,
             capabilities = capabilities,
-            -- capabilities = function()
-            -- 	local capa = vim.lsp.protocol.make_client_capabilities()
-            -- 	capa.textDocument.completion.completionItem.snippetSupport = true
-            -- 	return capa
-            -- end,
             configurationSection = { "html", "css" },
             embeddedLanguages = {
                 css = true,
                 javascript = true,
             },
-            --provideFormatter = true,
             filetypes = { "html", "html.jinja", "css" },
         })
 
