@@ -32,19 +32,26 @@ vim.opt.updatetime = 50
 local opts = { noremap = true, silent = true }
 
 local function quickfix()
-    vim.lsp.buf.code_action({
-        filter = function(a)
-            return a.isPreferred
-        end,
-        apply = true,
-    })
+	vim.lsp.buf.code_action({
+		filter = function(a)
+			return a.isPreferred
+		end,
+		apply = true,
+	})
 end
 
 vim.keymap.set("n", "<leader>qf", quickfix, opts)
 vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
-    callback = function()
-        require("lint").try_lint()
-    end,
+	callback = function()
+		require("lint").try_lint()
+	end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*",
+	callback = function(args)
+		require("conform").format({ bufnr = args.buf })
+	end,
 })
 
 -- vim.api.nvim_create_autocmd({ "LspAttach" }, {
@@ -61,7 +68,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
 vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#444b6a", italic = true })
 
 vim.diagnostic.config({
-    float = { border = "rounded" },
+	float = { border = "rounded" },
 })
 -- vim.diagnostic.config({
 --     virtual_text = {
