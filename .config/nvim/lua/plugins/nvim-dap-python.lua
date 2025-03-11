@@ -6,9 +6,8 @@ return {
         "rcarriga/nvim-dap-ui",
     },
     keys = {
-        { "n", "<M-b>", "<cmd> DapToggleBreakpoint <CR>", { desc = "Toggle breakpoint" } },
+        { "<M-b>", "<cmd> DapToggleBreakpoint <CR>", { desc = "Toggle breakpoint" } },
         {
-            "n",
             "<leader>drt",
             function()
                 require("dap-python").test_method()
@@ -21,8 +20,8 @@ return {
         require("dap-python").setup(path)
         require("dap-python").test_runner = "pytest"
         -- require("core.utils").load_mappings "dap_python"
-        vim.keymap.set("n", "<leader>drt", function()
-            require("dap-python").test_method()
-        end, { silent = true, desc = "Test method" })
+        -- vim.keymap.set("n", "<leader>drt", function()
+        --     require("dap-python").test_method()
+        -- end, { silent = true, desc = "Test method" })
     end,
 }
