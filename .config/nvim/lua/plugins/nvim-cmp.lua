@@ -9,8 +9,5 @@ return {
             ["<Down>"] = require("cmp").mapping.select_next_item({ behavior = require("cmp").SelectBehavior.Select }),
             ["<Up>"] = require("cmp").mapping.select_prev_item({ behavior = require("cmp").SelectBehavior.Select }),
         }
-        conf.completion = {
-            completeopt = "menu,menuone,noinsert",
-        }
     end,
 }

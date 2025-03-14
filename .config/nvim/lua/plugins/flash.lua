@@ -35,6 +35,10 @@ return {
                     }
                 end,
             },
+            image = {
+                enabled = true,
+                highlight = { backdrop = false },
+            },
         },
     },
   -- stylua: ignore
