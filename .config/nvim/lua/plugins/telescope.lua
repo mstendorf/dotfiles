@@ -11,10 +11,6 @@ return {
             "nvim-telescope/telescope-fzf-native.nvim",
             build = "make",
         },
-        {
-            "nvim-telescope/telescope-fzf-native.nvim",
-            build = "make",
-        },
     },
     config = function()
         local builtin = require("telescope.builtin")
@@ -39,6 +35,9 @@ return {
                         },
                     },
                 },
+                -- find_files = {
+                --     find_command = { "rg", "--files", "--sortr=modified" },
+                -- },
             },
             defaults = {
                 prompt_prefix = " ",
