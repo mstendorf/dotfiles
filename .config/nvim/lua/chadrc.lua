@@ -2,7 +2,7 @@ local M = {}
 
 M.base46 = {
     transparency = true,
-    theme = "gruvbox",
+    theme = "gruvchad",
 }
 M.ui = {
     cmp = {

@@ -67,13 +67,43 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#444b6a", italic = true })
 
-vim.diagnostic.config({
-    float = { border = "rounded" },
+-- close deleted files via oil.nvim
+vim.api.nvim_create_autocmd("User", {
+    pattern = "OilActionsPost",
+    callback = function(args)
+        local parse_url = function(url)
+            return url:match("^.*://(.*)$")
+        end
+
+        if args.data.err then
+            return
+        end
+
+        for _, action in ipairs(args.data.actions) do
+            if action.type == "delete" and action.entry_type == "file" then
+                local path = parse_url(action.url)
+                local bufnr = vim.fn.bufnr(path)
+                if bufnr == -1 then
+                    return
+                end
+
+                local winnr = vim.fn.win_findbuf(bufnr)[1]
+                if not winnr then
+                    return
+                end
+
+                vim.fn.win_execute(winnr, "bfirst | bw " .. bufnr)
+            end
+        end
+    end,
 })
+-- vim.diagnostic.config({
+--     float = { border = "rounded" },
+-- })
 
 -- force prettier diagnostics for all languages
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
+-- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+-- for type, icon in pairs(signs) do
+--     local hl = "DiagnosticSign" .. type
+--     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+-- end
