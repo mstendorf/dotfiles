@@ -88,7 +88,7 @@ return {
             on_init = on_init,
             capabilities = capabilities,
             filetypes = { "python" },
-            root_dir = lspconfig.util.root_pattern(".git", ".gitignore") or vim.fn.getcwd(),
+            root_dir = lspconfig.util.root_pattern(".git", "setup.cfg") or vim.fn.expand("%:h"),
         })
 
         lspconfig.jinja_lsp.setup({
