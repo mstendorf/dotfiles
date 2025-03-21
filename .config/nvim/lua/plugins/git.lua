@@ -38,6 +38,8 @@ return {
         },
         config = function()
             require("gitsigns").setup({
+                signcolumn = true,
+                current_line_blame = true,
                 on_attach = function(bufnr)
                     local gitsigns = require("gitsigns")
 

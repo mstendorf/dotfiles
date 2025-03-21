@@ -32,26 +32,26 @@ vim.opt.updatetime = 50
 local opts = { noremap = true, silent = true }
 
 local function quickfix()
-	vim.lsp.buf.code_action({
-		filter = function(a)
-			return a.isPreferred
-		end,
-		apply = true,
-	})
+    vim.lsp.buf.code_action({
+        filter = function(a)
+            return a.isPreferred
+        end,
+        apply = true,
+    })
 end
 
 vim.keymap.set("n", "<leader>qf", quickfix, opts)
 vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
-	callback = function()
-		require("lint").try_lint()
-	end,
+    callback = function()
+        require("lint").try_lint()
+    end,
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
-	end,
+    pattern = "*",
+    callback = function(args)
+        require("conform").format({ bufnr = args.buf })
+    end,
 })
 
 -- vim.api.nvim_create_autocmd({ "LspAttach" }, {
@@ -67,25 +67,43 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#444b6a", italic = true })
 
-vim.diagnostic.config({
-	float = { border = "rounded" },
+-- close deleted files via oil.nvim
+vim.api.nvim_create_autocmd("User", {
+    pattern = "OilActionsPost",
+    callback = function(args)
+        local parse_url = function(url)
+            return url:match("^.*://(.*)$")
+        end
+
+        if args.data.err then
+            return
+        end
+
+        for _, action in ipairs(args.data.actions) do
+            if action.type == "delete" and action.entry_type == "file" then
+                local path = parse_url(action.url)
+                local bufnr = vim.fn.bufnr(path)
+                if bufnr == -1 then
+                    return
+                end
+
+                local winnr = vim.fn.win_findbuf(bufnr)[1]
+                if not winnr then
+                    return
+                end
+
+                vim.fn.win_execute(winnr, "bfirst | bw " .. bufnr)
+            end
+        end
+    end,
 })
 -- vim.diagnostic.config({
---     virtual_text = {
---         source = true,
---         format = function(diagnostic)
---             if diagnostic.user_data and diagnostic.user_data.code then
---                 return string.format("%s %s", diagnostic.user_data.code, diagnostic.message)
---             else
---                 return diagnostic.message
---             end
---         end,
---     },
---     signs = true,
---     float = {
---         header = "Diagnostics",
---         source = true,
---         border = "rounded",
---     },
+--     float = { border = "rounded" },
 -- })
--- require("ibl").update()
+
+-- force prettier diagnostics for all languages
+-- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+-- for type, icon in pairs(signs) do
+--     local hl = "DiagnosticSign" .. type
+--     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+-- end
