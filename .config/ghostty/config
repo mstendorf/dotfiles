@@ -3,7 +3,7 @@ font-family-bold = "JetBrainsMono NFM Bold"
 font-family-italic = "JetBrainsMono NFM Italic"
 font-family-bold-italic = "JetBrainsMono NFM Bold Italic"
 
-font-size = 18
+font-size = 19
 #font-thicken = true
 
 # disable ligatures for all fonts
