@@ -70,6 +70,15 @@ return {
                         winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
                     },
                 },
+                mini = {
+
+                    timeout = 5000,
+                    align = "center",
+                    position = {
+                        row = "95%",
+                        col = "100%",
+                    },
+                },
             },
         })
     end,

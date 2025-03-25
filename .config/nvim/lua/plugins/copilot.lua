@@ -25,9 +25,34 @@ return {
             })
         end,
     },
-
+    -- {
+    --     "zbirenbaum/copilot.lua",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require("copilot").setup({
+    --             --     suggestion = {
+    --             --         enabled = true,
+    --             --         auto_trigger = true,
+    --             --         keymap = {
+    --             --             accept = "<C-a>",
+    --             --         },
+    --             --     },
+    --             --     panel = {
+    --             --         enabled = false,
+    --             --     },
+    --             --     filetypes = {
+    --             --         yaml = true,
+    --             --         markdown = true,
+    --             --     },
+    --             -- })
+    --             --
+    --             -- require("copilot_cmp").setup()
+    --         })
+    --     end,
+    -- },
     {
         "CopilotC-Nvim/CopilotChat.nvim",
+        -- dependencies = { "zbirenbaum/copilot.lua" },
         branch = "main",
         cmd = "CopilotChat",
         opts = function()
