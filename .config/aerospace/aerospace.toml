@@ -63,8 +63,8 @@ outer.right =      0
 5 = 'main'
 6 = 'main'
 7 = 'main'
-8 = '^Dell U2414H'
-9 = '^built-in retina display$'                       # Main monitor
+8 = 'main'
+9 = '^built-in retina display$'                       # Laptop display
 10 = 'main'
 
 
