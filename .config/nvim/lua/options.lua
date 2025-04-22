@@ -28,6 +28,7 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.updatetime = 50
 -- vim.opt.cmdheight = 1
+-- vim.o.winborder = "rounded"
 
 local opts = { noremap = true, silent = true }
 
