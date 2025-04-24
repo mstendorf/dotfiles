@@ -1,5 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
+	dependencies = { "saghen/blink.cmp" },
 	opts = {
 		inlay_hints = { enabled = true },
 	},
@@ -26,11 +27,13 @@ return {
 		end
 		-- local on_attach = config.on_attach
 		local on_init = config.on_init
+
 		-- config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
 		local capabilities = config.capabilities
 
 		local lspconfig = require("lspconfig")
-		local util = require("lspconfig/util")
+		-- local util = require("lspconfig/util")
+		-- local capabilities = require("blink.cmp").get_lsp_capabilities(nv_capabilities)
 
 		lspconfig.omnisharp.setup({
 			on_attach = on_attach,
@@ -216,5 +219,22 @@ return {
 			capabilities = capabilities,
 			filetypes = { "html", "htmldjango", "html.jinja", "css" },
 		})
+
+		-- local servers = {
+		-- 	"yamlls",
+		-- 	"bashls",
+		-- 	"basedpyright",
+		-- 	"jinja_lsp",
+		-- 	"eslint",
+		-- 	"tailwindcss",
+		-- 	"ts_ls",
+		-- 	"html",
+		-- 	"gopls",
+		-- 	"clangd",
+		-- 	"emmet_ls",
+		-- 	"omnisharp",
+		-- 	"rust_analuzer",
+		-- }
+		-- vim.lsp.enable(servers)
 	end,
 }

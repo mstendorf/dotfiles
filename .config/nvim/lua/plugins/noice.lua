@@ -95,6 +95,20 @@ return {
 						winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
 					},
 				},
+				hover = {
+					border = {
+						style = "rounded",
+						padding = { 0, 1 },
+					},
+					-- position = {
+					-- 	row = "100%",
+					-- 	col = "50%",
+					-- },
+					-- size = {
+					-- 	width = 60,
+					-- 	height = "auto",
+					-- },
+				},
 				mini = {
 
 					timeout = 5000,
