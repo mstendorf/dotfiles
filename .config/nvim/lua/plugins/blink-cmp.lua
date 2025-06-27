@@ -15,6 +15,12 @@ return {
             },
             completion = {
                 ghost_text = { enabled = false },
+                menu = {
+                    draw = {
+                        padding = { 0, 1 },
+                        align_to = "kind_icon",
+                    },
+                },
             },
             sources = {
                 default = { "lsp", "path", "snippets", "buffer" },
