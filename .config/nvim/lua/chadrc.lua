@@ -4,14 +4,14 @@ M.base46 = {
     transparency = true,
     theme = "gruvchad",
 }
+M.lsp = {
+    signature = false,
+}
 M.ui = {
     cmp = {
         style = "atom_colored",
         lspkind_text = true,
         -- icons_left = true,
-    },
-    lsp = {
-        signature = true,
     },
     tabufline = {
         enabled = false,
