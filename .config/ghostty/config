@@ -3,7 +3,7 @@ font-family-bold = "JetBrainsMono NF Bold"
 font-family-italic = "JetBrainsMono NF Italic"
 font-family-bold-italic = "JetBrainsMono NF Bold Italic"
 
-font-size = 19
+font-size = 18
 #font-thicken = true
 
 # disable ligatures for all fonts
@@ -11,7 +11,7 @@ font-feature = -liga
 font-feature = -calt
 font-feature = -dlig
 
-theme = "catppuccin-mocha"
+theme = Catppuccin Mocha
 #theme = "rose-pine"
 
 background-opacity = 0.95
