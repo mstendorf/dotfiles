@@ -1,0 +1,1 @@
+openfortivpn-webview portal.bnaa.dk | grep SVPNCOOKIE | sudo openfortivpn portal.bnaa.dk --cookie-on-stdin --trusted-cert ac5a7a000705b02658324864ea3b710e04fef94183c1cbc3cfce6647f4cac9f9 --set-dns=1 --pppd-use-peerdns=1
