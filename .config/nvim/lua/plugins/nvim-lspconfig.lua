@@ -92,6 +92,19 @@ return {
 			capabilities = capabilities,
 			filetypes = { "python" },
 			root_dir = lspconfig.util.root_pattern(".git", "setup.cfg") or vim.fn.getcwd(),
+			settings = {
+				python = {
+					analysis = {
+						-- autoSearchPaths = true,
+						-- useLibraryCodeForTypes = true,
+						reportArgumentType = "none",
+						diagnosticMode = "workspace",
+						typeCheckingMode = "off",
+						-- typeCheckingMode = "off",
+						-- stubPath = vim.fn.expand("$HOME/.local/share/nvim/mason/packages/pyright/stubs"),
+					},
+				},
+			},
 		})
 
 		lspconfig.jinja_lsp.setup({
@@ -220,21 +233,7 @@ return {
 			filetypes = { "html", "htmldjango", "html.jinja", "css" },
 		})
 
-		-- local servers = {
-		-- 	"yamlls",
-		-- 	"bashls",
-		-- 	"basedpyright",
-		-- 	"jinja_lsp",
-		-- 	"eslint",
-		-- 	"tailwindcss",
-		-- 	"ts_ls",
-		-- 	"html",
-		-- 	"gopls",
-		-- 	"clangd",
-		-- 	"emmet_ls",
-		-- 	"omnisharp",
-		-- 	"rust_analuzer",
-		-- }
-		-- vim.lsp.enable(servers)
+		-- Suppress lspconfig deprecation warning
+		vim.g.lspconfig_deprecation_notice_shown = true
 	end,
 }

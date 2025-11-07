@@ -4,7 +4,7 @@ local nomap = vim.keymap.del
 
 nomap("n", "<leader>gt")
 nomap("n", "<leader>cm")
-nomap("n", "<tab>")
+-- nomap("n", "<tab>")
 nomap("n", "<leader>e")
 nomap("n", "<leader>n")
 
@@ -12,10 +12,10 @@ local map = vim.keymap.set
 
 -- toggle inlay hints
 map("n", "<leader>ih", function()
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay hints" })
 map("n", "<leader>fm", function()
-    require("conform").format()
+	require("conform").format()
 end, { desc = "File Format with conform" })
 
 -- som basic qol remaps
@@ -51,50 +51,50 @@ map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<cr>", { desc = "run t
 
 -- cullular automaton
 map("n", "<leader>fml", function()
-    require("cellular-automaton").start_animation("make_it_rain")
+	require("cellular-automaton").start_animation("make_it_rain")
 end, { desc = "cellular-automaton make_it_rain" })
 
 map("n", "<leader>fu", function()
-    require("cellular-automaton").start_animation("scramble")
+	require("cellular-automaton").start_animation("scramble")
 end, { desc = "cellular-automaton scramble" })
 map("n", "<leader>fuu", function()
-    require("cellular-automaton").start_animation("game_of_life")
+	require("cellular-automaton").start_animation("game_of_life")
 end, { desc = "cellular-automaton game_of_life" })
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- trouble
 map(
-    "n",
-    "<leader>ww",
-    "<cmd>Trouble diagnostics toggle<cr>",
-    { desc = "toggle trouble with workspace diagnostics", silent = true, noremap = true }
+	"n",
+	"<leader>ww",
+	"<cmd>Trouble diagnostics toggle<cr>",
+	{ desc = "toggle trouble with workspace diagnostics", silent = true, noremap = true }
 )
 map(
-    "n",
-    "<leader>wW",
-    "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-    { desc = "toggle trouble with workspace diagnostics", silent = true, noremap = true }
+	"n",
+	"<leader>wW",
+	"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+	{ desc = "toggle trouble with workspace diagnostics", silent = true, noremap = true }
 )
 
 -- zen mode
 vim.keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>", { silent = true, noremap = true, desc = "Zen mode" })
 -- visual mode bindings
 map("v", "<leader>ca", function()
-    require("actions-preview").code_actions()
+	require("actions-preview").code_actions()
 end, { desc = "Code actions" })
 
 -- snippets
 local ls = require("luasnip")
 vim.keymap.set({ "i", "s" }, "<C-k>", function()
-    if ls.expand_or_jumpable() then
-        return ls.expand_or_jump()
-    end
+	if ls.expand_or_jumpable() then
+		return ls.expand_or_jump()
+	end
 end, { silent = true, desc = "Expand or jump snippet" })
 
 vim.keymap.set({ "i", "s" }, "<C-j>", function()
-    if ls.jumpable(-1) then
-        return ls.jump(-1)
-    end
+	if ls.jumpable(-1) then
+		return ls.jump(-1)
+	end
 end, { silent = true, desc = "Jump to prev snippet" })
 
 vim.cmd([[
