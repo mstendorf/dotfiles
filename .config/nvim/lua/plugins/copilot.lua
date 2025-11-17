@@ -19,6 +19,12 @@ return {
 				--     markdown = true,
 				-- },
 			})
+
+			-- Remove M-CR from blink.cmp to avoid conflict with Copilot
+			local blink_cmp_ok, blink = pcall(require, "blink.cmp")
+			if blink_cmp_ok and blink.keymap then
+				blink.keymap["<M-CR>"] = nil
+			end
 		end,
 	},
 	{
