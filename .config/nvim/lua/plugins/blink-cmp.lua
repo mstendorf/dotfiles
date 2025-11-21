@@ -11,13 +11,7 @@ return {
 				["<S-Tab>"] = { "select_prev", "fallback" },
 				["<Tab>"] = { "select_next", "fallback" },
 				["<C-b>"] = { "scroll_documentation_up", "fallback" },
-				["<C-f"] = { "scroll_documentation_down", "fallback" },
-			},
-			signature = {
-				-- enabled = false,
-				trigger = {
-					enable = false,
-				},
+				["<C-f>"] = { "scroll_documentation_down", "fallback" },
 			},
 			completion = {
 				ghost_text = { enabled = false },
@@ -26,6 +20,15 @@ return {
 						padding = { 0, 1 },
 						align_to = "kind_icon",
 					},
+				},
+				trigger = {
+					show_on_insert_on_trigger_character = true,
+				},
+			},
+			signature = {
+				enabled = true,
+				trigger = {
+					enabled = true,
 				},
 			},
 			sources = {
