@@ -28,10 +28,15 @@ cursor-text = #000000
 
 shell-integration-features = no-cursor
 
-macos-option-as-alt = true
+macos-option-as-alt = left
 quit-after-last-window-closed = true
 auto-update = "download"
 
+# explicitly remove Ghostty keybindings for the literal characters so the keys are forwarded
+# keybind = [=unbind
+# keybind = ]=unbind
+# keybind = {=unbind
+# keybind = }=unbind
 #keybind = global:ctrl+alt+q=toggle_quick_terminal
 
 #command = /bin/zsh ~/.local/bin/ghostty-tmux
