@@ -25,8 +25,21 @@ return {
         --   --   note = "info",
         --   -- },
         -- }
-        -- local mypy = lint.linters.mypy
-        -- mypy.args = { "--implicit-reexport" }
+        local mypy = lint.linters.mypy
+        mypy.args = function()
+            local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX") or "/usr"
+            return {
+                "--show-column-numbers",
+                "--show-error-end",
+                "--hide-error-codes",
+                "--hide-error-context",
+                "--no-color-output",
+                "--no-error-summary",
+                "--no-pretty",
+                "--python-executable",
+                virtual .. "/bin/python",
+            }
+        end
         lint.linters_by_ft = {
             python = { "ruff", "mypy" },
             javascript = { "djlint" },
