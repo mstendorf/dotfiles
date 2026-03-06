@@ -158,7 +158,7 @@ alt-m = 'mode monitor'
 alt-shift-c = 'reload-config'
 
 # app launching
-ctrl-alt-cmd-shift-a = ['exec-and-forget open -a Arc.app', 'mode main']
+ctrl-alt-cmd-shift-a = ['exec-and-forget open -a "Brave Browser.app"', 'mode main']
 ctrl-alt-cmd-shift-c = ['exec-and-forget open -a Discord.app', 'mode main'] # chat
 ctrl-alt-cmd-shift-d = ['exec-and-forget open -a Ghostty.app', 'mode main'] # dev
 ctrl-alt-cmd-shift-f = ['exec-and-forget open -a Finder.app', 'mode main']
@@ -213,7 +213,7 @@ run = ['layout floating', 'move-node-to-workspace 1']
 
 # desktop 2 - browsing
 [[on-window-detected]]
-if.app-id = 'company.thebrowser.Browser'
+if.app-id = 'com.brave.Browser'
 run = ['move-node-to-workspace 2']
 
 # desktop 3 - development
