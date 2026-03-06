@@ -77,19 +77,6 @@ return {
 				},
 			},
 			gopls = { filetypes = { "go", "gomod", "gosum", "gohtmltmpl", "gotexttmpl" } },
-			rust_analyzer = {
-				filetypes = { "rust" },
-				settings = {
-					["rust-analyzer"] = {
-						assist = { importEnforceGranularity = true },
-						cargo = { allFeatures = true },
-						checkOnSave = { command = "clippy", allFeatures = true },
-						inlayHints = {
-							lifetimeElisionHints = { enable = true, useParameterNames = true },
-						},
-					},
-				},
-			},
 			lua_ls = {
 				settings = {
 					Lua = {
