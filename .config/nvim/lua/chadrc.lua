@@ -2,7 +2,7 @@ local M = {}
 
 M.base46 = {
     transparency = true,
-    theme = "gruvchad",
+    theme = "catppuccin",
 }
 M.lsp = {
     signature = false,

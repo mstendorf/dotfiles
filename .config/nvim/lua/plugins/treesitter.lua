@@ -88,5 +88,8 @@ return {
         "OXY2DEV/markview.nvim",
         "windwp/nvim-ts-autotag",
     },
+    config = function(_, opts)
+        require("nvim-treesitter.configs").setup(opts)
+    end,
     lazy = false,
 }
