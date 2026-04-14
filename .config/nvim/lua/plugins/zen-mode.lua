@@ -38,13 +38,6 @@ return {
                 gitsigns = { enabled = false }, -- disables git signs
                 tmux = { enabled = true }, -- disables the tmux statusline
                 todo = { enabled = false }, -- if set to "true", todo-comments.nvim highlights will be disabled
-                -- this will change the font size on alacritty when in zen mode
-                -- requires  Alacritty Version 0.10.0 or higher
-                -- uses `alacritty msg` subcommand to change font size
-                alacritty = {
-                    enabled = true,
-                    font = "14", -- font size
-                },
             },
         })
     end,

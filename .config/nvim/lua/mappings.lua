@@ -11,9 +11,7 @@ nomap("n", "<leader>n")
 local map = vim.keymap.set
 
 -- undotree
-map("n", "<leader>u", require("undotree").open, { desc = "Undotreee toggle" })
-
-vim.keymap.set("n", "<leader>u", require("undotree").open)
+map("n", "<leader>u", require("undotree").open, { desc = "Undotree toggle" })
 -- toggle inlay hints
 map("n", "<leader>ih", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
@@ -42,7 +40,6 @@ map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close buffer" })
 map("x", "g/", "<Esc>/\\%V") -- Search in visual selection only
 
 -- insert mode bindings
-map("i", "<C-c>", "<Esc>", { desc = "Remap for vertical edit to handle C-c" })
 map("i", "<C-a>", "<ESC>^i", { desc = "Beginning of line" })
 
 -- centered search

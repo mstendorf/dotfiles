@@ -25,35 +25,6 @@ return {
             "query",
         },
         auto_install = true,
-        -- autotag = {
-        --     enable = true,
-        --     enable_close = true,
-        --     enable_close_on_slash = true,
-        --     filetypes = {
-        --         "jinja2",
-        --         "html",
-        --         "htmldjango",
-        --         "html.jinja",
-        --         -- "htmldjango",
-        --         "css",
-        --         "javascript",
-        --         "typescript",
-        --         "javascriptreact",
-        --         "typescriptreact",
-        --         "svelte",
-        --         "vue",
-        --         "tsx",
-        --         "jsx",
-        --         "rescript",
-        --         "xml",
-        --         "php",
-        --         "markdown",
-        --         "astro",
-        --         "glimmer",
-        --         "handlebars",
-        --         "hbs",
-        --     },
-        -- },
         textobjects = {
             select = {
                 enable = true,
@@ -85,7 +56,6 @@ return {
     dependencies = {
         "nvim-treesitter/nvim-treesitter-context",
         "nvim-treesitter/nvim-treesitter-textobjects",
-        "OXY2DEV/markview.nvim",
         "windwp/nvim-ts-autotag",
     },
     config = function(_, opts)
