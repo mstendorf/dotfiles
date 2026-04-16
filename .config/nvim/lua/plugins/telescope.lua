@@ -46,7 +46,7 @@ return {
                     num_pickers = 5,
                 },
                 history = {
-                    path = "~/.local/share/nvim/databases/telescope_history",
+                    path = vim.fn.stdpath("data") .. "/databases/telescope_history",
                     limit = 100,
                 },
                 mappings = {
@@ -106,7 +106,6 @@ return {
         vim.keymap.set("n", "<leader>fn", "<cmd> Telescope lsp_document_symbols ignore_symbols=variable,module <CR>")
         vim.keymap.set("n", "<leader>ft", "<cmd> Telescope help_tags <CR>", { desc = "List help tags of nvim" })
         vim.keymap.set("n", "<leader>gf", "<cmd> Telescope git_files <CR>", { desc = "Find files tracked by git" })
-        vim.keymap.set("n", "<leader>gch", "<cmd> Telescope git_file_history <CR>", { desc = "Git commit history!" })
         -- vim.keymap.set("n", "gr", "<cmd> Telescope lsp_references<CR>", { desc = "lsp references" })
     end,
 }

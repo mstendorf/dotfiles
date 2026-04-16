@@ -23,7 +23,7 @@ return {
         end, { desc = "Start debugging" })
 
         vim.keymap.set("n", "<leader>drc", function()
-            require("dat").run_to_cursor()
+            require("dap").run_to_cursor()
         end, { silent = true, desc = "Run to cursor" })
 
         vim.keymap.set("n", "<M-b>", "<cmd> DapToggleBreakpoint <CR>", { desc = "Toggle breakpoint" })

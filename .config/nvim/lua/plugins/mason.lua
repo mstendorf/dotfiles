@@ -10,23 +10,17 @@ return {
             "prettierd",
             "shellcheck",
             "lua-language-server",
-            "black",
             "debugpy",
             "mypy",
-            "pylint",
             "basedpyright", -- python LSP
-            "isort",
             "ruff",
-            "ruff-lsp",
-            "typescript-language-server", -- JS LSP
             "tailwindcss-language-server",
             "eslint-lsp",
-            "ts_ls",
+            "ts_ls", -- JS/TS LSP
             "omnisharp", -- c# LSP
             "gopls",
             "gofumpt",
             "djlint",
-            "eslint_d",
             "goimports",
             "clangd",
             "jinja-lsp",
