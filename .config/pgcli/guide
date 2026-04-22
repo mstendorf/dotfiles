@@ -1,0 +1,3 @@
+brew install pipx
+pipx install pgcli
+pipx inject pgcli keyring
