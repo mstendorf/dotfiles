@@ -241,13 +241,6 @@ return {
                 Snacks.toggle.treesitter():map("<leader>tt")
                 Snacks.toggle.inlay_hints():map("<leader>ti")
                 Snacks.toggle.indent():map("<leader>tg")
-
-                -- Ensure Snacks handles vim.notify (overrides noice after all VeryLazy plugins load)
-                vim.defer_fn(function()
-                    vim.notify = function(msg, level, opts)
-                        Snacks.notify(msg, level, opts)
-                    end
-                end, 0)
             end,
         })
     end,
