@@ -1,5 +1,6 @@
 return {
-  "chrisgrieser/nvim-puppeteer",
-  dependencies = "nvim-treesitter/nvim-treesitter",
-  ft = { "python", "javascript", "typescript" },
+    "chrisgrieser/nvim-puppeteer",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    ft = { "python", "javascript", "typescript" },
+    enabled = false,
 }
